@@ -52,11 +52,80 @@ function typeEffect() {
 // Efeito de navbar ao rolar
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
+});
+
+// Menu hamburger para dispositivos móveis - CORRIGIDO
+const menuHamburger = document.querySelector('.menu-hamburger');
+const navLinks = document.querySelector('.nav-links');
+const body = document.body;
+
+// Criar overlay para fechar o menu ao clicar fora
+const overlay = document.createElement('div');
+overlay.classList.add('menu-overlay');
+body.appendChild(overlay);
+
+if (menuHamburger && navLinks) {
+    menuHamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        menuHamburger.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.classList.toggle('menu-open');
+        
+        // Alternar ícone do menu
+        const icon = menuHamburger.querySelector('i');
+        if (icon) {
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    });
+}
+
+// Fechar menu ao clicar no overlay
+overlay.addEventListener('click', function() {
+    if (navLinks && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        if (menuHamburger) {
+            menuHamburger.classList.remove('active');
+            const icon = menuHamburger.querySelector('i');
+            if (icon) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+        overlay.classList.remove('active');
+        body.classList.remove('menu-open');
+    }
+});
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks) {
+            navLinks.classList.remove('active');
+            if (menuHamburger) {
+                menuHamburger.classList.remove('active');
+                const icon = menuHamburger.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+            overlay.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
 });
 
 // Slider para certificados
@@ -68,7 +137,7 @@ const certificadoCards = document.querySelectorAll('.certificado-card');
 let currentIndex = 0;
 const cardWidth = 330; // 300px card width + 30px gap
 let visibleCards = 3;
-let maxIndex = Math.max(0, certificadoCards.length - visibleCards);
+let maxIndex = certificadoCards.length ? Math.max(0, certificadoCards.length - visibleCards) : 0;
 
 // Função para atualizar o número de cards visíveis baseado no tamanho da tela
 function updateVisibleCards() {
@@ -81,7 +150,10 @@ function updateVisibleCards() {
     } else {
         visibleCards = 3;
     }
-    maxIndex = Math.max(0, certificadoCards.length - visibleCards);
+    
+    if (certificadoCards.length) {
+        maxIndex = Math.max(0, certificadoCards.length - visibleCards);
+    }
     
     // Ajustar o índice atual se necessário
     if (currentIndex > maxIndex) {

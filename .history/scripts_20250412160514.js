@@ -59,6 +59,42 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Menu hamburger para dispositivos móveis
+const menuHamburger = document.querySelector('.menu-hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuHamburger && navLinks) {
+    menuHamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        
+        // Alternar ícone do menu
+        const icon = menuHamburger.querySelector('i');
+        if (icon) {
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    });
+}
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks) {
+            navLinks.classList.remove('active');
+            const icon = menuHamburger ? menuHamburger.querySelector('i') : null;
+            if (icon) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    });
+});
+
 // Slider para certificados
 const sliderTrack = document.querySelector('.slider-track');
 const prevArrow = document.querySelector('.prev-arrow');

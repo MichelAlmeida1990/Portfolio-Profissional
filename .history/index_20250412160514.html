@@ -431,18 +431,6 @@
                 // Atualiza o atributo aria-expanded para acessibilidade
                 const isExpanded = menuHamburger.classList.contains('active');
                 menuHamburger.setAttribute('aria-expanded', isExpanded);
-                
-                // Alternar ícone do menu
-                const icon = menuHamburger.querySelector('i');
-                if (icon) {
-                    if (isExpanded) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                }
             }
             
             // Adicionar evento de clique ao menu hamburger
@@ -468,6 +456,5 @@
             });
         });
     </script>
-    
 </body>
 </html>
