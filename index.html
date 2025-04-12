@@ -26,16 +26,16 @@
         </div>
         <div class="nav-links">
             <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#tecnologias">Tecnologias</a></li>
-                <li><a href="#certificados">Certificados</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#formacao">Formação</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#home" class="nav-item">Início</a></li>
+                <li><a href="#sobre" class="nav-item">Sobre</a></li>
+                <li><a href="#tecnologias" class="nav-item">Tecnologias</a></li>
+                <li><a href="#certificados" class="nav-item">Certificados</a></li>
+                <li><a href="#projetos" class="nav-item">Projetos</a></li>
+                <li><a href="#formacao" class="nav-item">Formação</a></li>
+                <li><a href="#contato" class="nav-item">Contato</a></li>
             </ul>
         </div>
-        <div class="menu-hamburger">
+        <div class="menu-hamburger" aria-label="Menu de navegação" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </div>
     </nav>
@@ -374,8 +374,9 @@
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/michel-paulo-de-almeida/" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/MichelAlmeida1990" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/michel.almeida1990" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
+                
             </div>
             <div class="contato-form" data-aos="fade-left" data-aos-delay="100">
                 <form id="contact-form">
@@ -410,5 +411,50 @@
     <script src="js/particles/particles-config.js"></script>
     <script src="js/particles/cursor.js"></script> <!-- Novo arquivo JavaScript para o cursor -->
     <script src="scripts.js"></script>
+    
+    <!-- Novo script para o menu hamburger -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Selecionar elementos
+            const menuHamburger = document.querySelector('.menu-hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            // Função para alternar o menu
+            function toggleMenu() {
+                // Alterna a classe active no menu hamburger
+                menuHamburger.classList.toggle('active');
+                
+                // Alterna a classe active no nav-links
+                navLinks.classList.toggle('active');
+                
+                // Atualiza o atributo aria-expanded para acessibilidade
+                const isExpanded = menuHamburger.classList.contains('active');
+                menuHamburger.setAttribute('aria-expanded', isExpanded);
+            }
+            
+            // Adicionar evento de clique ao menu hamburger
+            menuHamburger.addEventListener('click', toggleMenu);
+            
+            // Adicionar evento de clique a cada item do menu para fechar o menu ao clicar
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+            
+            // Fechar o menu ao clicar fora dele
+            document.addEventListener('click', function(event) {
+                const isClickInsideMenu = navLinks.contains(event.target);
+                const isClickOnHamburger = menuHamburger.contains(event.target);
+                
+                if (navLinks.classList.contains('active') && !isClickInsideMenu && !isClickOnHamburger) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
