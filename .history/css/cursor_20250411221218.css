@@ -1,0 +1,104 @@
+/* Esconder o cursor padrão em elementos interativos */
+body.custom-cursor,
+body.custom-cursor a,
+body.custom-cursor button,
+body.custom-cursor input[type="button"],
+body.custom-cursor input[type="submit"],
+body.custom-cursor .btn,
+body.custom-cursor .tech-icon,
+body.custom-cursor .project-card,
+body.custom-cursor .social-links a {
+    cursor: none;
+}
+
+/* Estilos do cursor personalizado */
+.cursor-outer,
+.cursor-inner {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursor-outer {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(37, 99, 235, 0.5);
+    transition: all 0.1s ease-out;
+}
+
+.cursor-inner {
+    width: 8px;
+    height: 8px;
+    background-color: #2563EB;
+    transition: all 0.15s ease-out;
+}
+
+/* Cursor sobre elementos clicáveis */
+.cursor-hover .cursor-outer {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(37, 99, 235, 0.3);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.cursor-hover .cursor-inner {
+    width: 12px;
+    height: 12px;
+    background-color: #2563EB;
+}
+
+/* Cursor quando clicado */
+.cursor-click .cursor-outer {
+    width: 36px;
+    height: 36px;
+    border-color: rgba(37, 99, 235, 0.8);
+}
+
+.cursor-click .cursor-inner {
+    width: 14px;
+    height: 14px;
+    background-color: #1E40AF;
+}
+
+/* Efeito de rastro */
+.cursor-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(37, 99, 235, 0.3);
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Animação de pulso para o cursor */
+@keyframes cursorPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+/* Ocultar cursor em dispositivos móveis */
+@media (max-width: 768px) {
+    .cursor-outer,
+    .cursor-inner,
+    .cursor-trail {
+        display: none;
+    }
+    
+    body.custom-cursor,
+    body.custom-cursor a,
+    body.custom-cursor button {
+        cursor: auto;
+    }
+}

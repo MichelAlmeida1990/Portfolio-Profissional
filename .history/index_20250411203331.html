@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michel Paulo | Desenvolvedor Front-End</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar com efeito de transparência ao rolar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span>Michel Paulo</span>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="menu-hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section com animação de digitação -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Michel Paulo de Almeida</h1>
+            <div class="typing-text">
+                <span id="text-animation"></span><span class="cursor">|</span>
+            </div>
+            <p>Transformando experiência em vendas e gestão em soluções tecnológicas inovadoras</p>
+            <div class="hero-buttons">
+                <a href="#projetos" class="btn primary-btn">Ver Projetos</a>
+                <a href="#contato" class="btn secondary-btn">Contato</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- Aqui você pode adicionar sua foto profissional -->
+            <div class="profile-placeholder"></div>
+        </div>
+    </section>
+
+    <!-- Sobre mim com cards flutuantes -->
+    <section id="sobre" class="sobre">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="sobre-content">
+            <div class="sobre-text">
+                <p>Profissional de vendas e gestão com extensa experiência em ambientes de alto desempenho, especializado em CRM e gestão de equipes. Formado em Gestão de Recursos Humanos com estudos em andamento em Tecnologia da Informação e desenvolvimento front-end.</p>
+                <p>Proativo e orientado para resultados, busco integrar minhas habilidades em vendas e tecnologia para impulsionar inovações e melhorar a eficiência operacional em organizações dinâmicas e competitivas.</p>
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Experiência</h3>
+                    <p>6+ anos em vendas e gestão no setor de telecomunicações</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Formação</h3>
+                    <p>Gestão de RH e estudante de Ciência de Dados</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-code"></i>
+                    <h3>Tecnologia</h3>
+                    <p>Desenvolvimento Front-end e Cloud Computing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades com barras de progresso animadas -->
+    <section id="habilidades" class="habilidades">
+        <h2 class="section-title">Minhas Habilidades</h2>
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Desenvolvimento</h3>
+                <div class="skill">
+                    <span>HTML/CSS</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;" data-value="85%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>JavaScript</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;" data-value="75%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>Java</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%;" data-value="60%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>UX/UI Design</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;" data-value="70%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-category">
+                <h3>Profissional</h3>
+                <div class="skill">
+                    <span>Gestão de Vendas</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;" data-value="95%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>CRM</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;" data-value="90%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>Liderança</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;" data-value="85%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>Cloud Computing</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%;" data-value="65%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos com efeito de hover -->
+    <section id="projetos" class="projetos">
+        <h2 class="section-title">Meus Projetos</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://source.unsplash.com/random/600x400/?barbershop" alt="Barbearia do Di">
+                </div>
+                <div class="project-info">
+                    <h3>Barbearia do Di</h3>
+                    <p>Site responsivo para barbearia com sistema de agendamento e galeria de serviços.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://barbearia-do-di.vercel.app" target="_blank" class="btn">Ver Demo</a>
+                        <a href="#" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://source.unsplash.com/random/600x400/?drinks" alt="Site de Bebidas do Santo">
+                </div>
+                <div class="project-info">
+                    <h3>Site de Bebidas do Santo</h3>
+                    <p>E-commerce de bebidas com catálogo de produtos e sistema de carrinho de compras.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://michelalmeida1990.github.io/SITE-DE-BEBIDAS-DO-SANTO/" target="_blank" class="btn">Ver Demo</a>
+                        <a href="#" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Adicione mais projetos conforme necessário -->
+        </div>
+    </section>
+
+    <!-- Experiência com timeline -->
+    <section id="experiencia" class="experiencia">
+        <h2 class="section-title">Experiência Profissional</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Consultor de Vendas</h3>
+                    <h4>Claro Brasil</h4>
+                    <p class="timeline-date">04/2018 - 04/2024</p>
+                    <p>Atendimento personalizado, aplicando técnicas avançadas de vendas e CRM para diagnosticar necessidades dos clientes e fornecer soluções sob medida. Liderança em prospecção e desenvolvimento de novos negócios através de canais digitais, telefônicos e presenciais.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Subgerente</h3>
+                    <h4>Tim Brasil (Franquiado FM Rocha)</h4>
+                    <p class="timeline-date">06/2017 - 02/2018</p>
+                    <p>Gerenciamento das operações diárias da loja, elaboração de escalas mensais e atendimento ao cliente em situações complexas. Realização de reuniões semanais com a equipe de vendas e desenvolvimento de relatórios diários para otimização de estratégias.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Consultor de Vendas</h3>
+                    <h4>Tim Brasil (Franquiado FM Rocha)</h4>
+                    <p class="timeline-date">06/2016 - 05/2017</p>
+                    <p>Atendimento direto ao cliente, vendendo planos de telefonia, aparelhos celulares e seguros. Gerenciamento de sistemas integrados para registro e acompanhamento de vendas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato com formulário animado -->
+    <section id="contato" class="contato">
+        <h2 class="section-title">Entre em Contato</h2>
+        <div class="contato-container">
+            <div class="contato-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>michelpaulo06@hotmail.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>(11) 95940-7653</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Mauá - SP</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank">https://www.linkedin.com/in/michel-paulo-de-almeida/<i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contato-form">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Nome</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Mensagem</label>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Michel Paulo de Almeida. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

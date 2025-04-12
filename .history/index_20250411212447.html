@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michel Paulo | Desenvolvedor Front-End</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+    <!-- Navbar com efeito de transparência ao rolar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span>Michel Paulo</span>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#certificados">Certificados</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="menu-hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section com animação de digitação -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+            <h1>Michel Paulo de Almeida</h1>
+            <div class="typing-text">
+                <span id="text-animation"></span><span class="cursor">|</span>
+            </div>
+            <p>Desenvolvedor Front-End e entusiasta de Cloud Computing</p>
+            <div class="hero-buttons">
+                <a href="#projetos" class="btn primary-btn">Ver Projetos</a>
+                <a href="#contato" class="btn secondary-btn">Contato</a>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+            <div class="profile-placeholder">
+                <!-- Corrigido para usar uma imagem placeholder caso a sua não esteja disponível -->
+                <img src="./" alt="Foto perfil" id="profile-img" onerror="this.src='https://via.placeholder.com/300x300'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre mim com foco em tecnologia -->
+    <section id="sobre" class="sobre">
+        <h2 class="section-title" data-aos="fade-up">Sobre Mim</h2>
+        <div class="sobre-content">
+            <div class="sobre-text" data-aos="fade-up" data-aos-delay="100">
+                <p>Desenvolvedor Front-End com formação em Tecnologia da Informação e paixão por criar interfaces intuitivas e funcionais. Possuo conhecimentos em HTML, CSS, JavaScript e estou constantemente aprimorando minhas habilidades em frameworks modernos.</p>
+                <p>Tenho experiência com projetos web responsivos e estou em processo de transição de carreira para me dedicar integralmente à área de desenvolvimento. Meu background em gestão me proporciona uma visão única sobre a importância da experiência do usuário e da eficiência operacional.</p>
+            </div>
+            <div class="cards-container">
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-code"></i>
+                    <h3>Desenvolvimento</h3>
+                    <p>Front-End, UX/UI Design e princípios de desenvolvimento web</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Computing</h3>
+                    <p>Microsoft Azure, AWS e fundamentos de infraestrutura em nuvem</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-database"></i>
+                    <h3>Dados</h3>
+                    <p>Análise e visualização de informações, SQL e bancos de dados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologias com ícones -->
+    <section id="tecnologias" class="tecnologias">
+        <h2 class="section-title" data-aos="fade-up">Tecnologias</h2>
+        <div class="tech-container">
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="100">
+                <h3>Front-End</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="200">
+                <h3>Back-End & Dados</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-java"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Power BI</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="300">
+                <h3>DevOps & Cloud</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Azure</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="400">
+                <h3>Ferramentas</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-figma"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-terminal"></i>
+                        <span>Terminal</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-tasks"></i>
+                        <span>Scrum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificados com cards deslizantes (alterado de Certificações) -->
+    <section id="certificados" class="certificados">
+        <h2 class="section-title" data-aos="fade-up">Certificados</h2>
+        <div class="certificados-slider" data-aos="fade-up" data-aos-delay="100">
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <!-- Corrigido para usar uma imagem confiável do Microsoft -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>Microsoft Azure Fundamentals (AZ-900)</h3>
+                            <p>Microsoft</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>Microsoft AI-900</h3>
+                            <p>SENAI</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <!-- Corrigido para usar uma imagem confiável da AWS -->
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-aws-1869025-1583149.png" alt="AWS">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>AWS Cloud Practitioner Essentials</h3>
+                            <p>Ka Solution</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <!-- Corrigido para usar uma imagem confiável da Oracle -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/5969/5969293.png" alt="Oracle">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>Oracle Next Education Front-End</h3>
+                            <p>Oracle</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <!-- Corrigido para usar uma imagem confiável de Java -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" alt="Java">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>Linguagem de Programação Java</h3>
+                            <p>Fundação Bradesco</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>Microsoft 365 Fundamentals (MS-900)</h3>
+                            <p>Microsoft</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-arrows">
+                    <button class="arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos com efeito de hover aprimorado -->
+    <section id="projetos" class="projetos">
+        <h2 class="section-title" data-aos="fade-up">Meus Projetos</h2>
+        <div class="projects-grid">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <!-- Imagem confiável para o projeto de barbearia -->
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Barbearia do Di">
+                </div>
+                <div class="project-info">
+                    <h3>Barbearia do Di</h3>
+                    <p>Site responsivo para barbearia com sistema de agendamento e galeria de serviços.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://barbearia-do-di.vercel.app" target="_blank" class="btn">Ver Demo</a>
+                        <a href="https://github.com/MichelAlmeida1990/barbearia-do-di" target="_blank" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <!-- Imagem confiável para o projeto de bebidas -->
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Site de Bebidas do Santo">
+                </div>
+                <div class="project-info">
+                    <h3>Site de Bebidas do Santo</h3>
+                    <p>E-commerce de bebidas com catálogo de produtos e sistema de carrinho de compras.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://michelalmeida1990.github.io/SITE-DE-BEBIDAS-DO-SANTO/" target="_blank" class="btn">Ver Demo</a>
+                        <a href="https://github.com/MichelAlmeida1990/SITE-DE-BEBIDAS-DO-SANTO" target="_blank" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-image">
+                    <!-- Imagem confiável para o projeto de portfólio -->
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Portfólio Pessoal">
+                </div>
+                <div class="project-info">
+                    <h3>Portfólio Pessoal</h3>
+                    <p>Site responsivo para apresentação de projetos e habilidades técnicas.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn">Ver Demo</a>
+                        <a href="https://github.com/MichelAlmeida1990" target="_blank" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formação Acadêmica -->
+    <section id="formacao" class="formacao">
+        <h2 class="section-title" data-aos="fade-up">Formação Acadêmica</h2>
+        <div class="education-container">
+            <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="education-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="education-info">
+                    <h3>Bacharelado em Tecnologia da Informação</h3>
+                    <h4>Universidade Virtual do Estado de São Paulo (UNIVESP)</h4>
+                    <p class="education-date">Em andamento</p>
+                    <p>Formação com foco em desenvolvimento de software, infraestrutura e sistemas de informação.</p>
+                </div>
+            </div>
+            
+            <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="education-info">
+                    <h3>Bacharelado em Gestão de Recursos Humanos</h3>
+                    <h4>Universidade Nove de Julho (UNINOVE)</h4>
+                    <p class="education-date">Concluído em Maio 2022</p>
+                    <p>Formação em gestão de pessoas, processos organizacionais e desenvolvimento profissional.</p>
+                </div>
+            </div>
+            
+            <div class="education-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="education-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="education-info">
+                    <h3>Programa Oracle Next Education</h3>
+                    <h4>Oracle + Alura</h4>
+                    <p class="education-date">2023</p>
+                    <p>Programa intensivo de formação em desenvolvimento Front-End, com foco em HTML, CSS, JavaScript e React.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato com formulário animado -->
+    <section id="contato" class="contato">
+        <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
+        <div class="contato-container">
+            <div class="contato-info" data-aos="fade-right" data-aos-delay="100">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>michelpaulo06@hotmail.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>(11) 95940-7653</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Mauá - SP</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/michel-paulo-de-almeida/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/MichelAlmeida1990" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contato-form" data-aos="fade-left" data-aos-delay="100">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Nome</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Mensagem</label>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Michel Paulo de Almeida. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

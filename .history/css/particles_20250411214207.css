@@ -1,0 +1,35 @@
+/* Estilos para o container de partículas */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Ajustes para garantir que o conteúdo fique acima das partículas */
+.hero-content, .hero-image {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ajuste para dispositivos de baixo desempenho */
+.particles-disabled .particles-container {
+    display: none;
+}
+
+/* Animação para as partículas */
+@keyframes particle-glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(37, 99, 235, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+    }
+}
+
+/* Classe para partículas com efeito de brilho */
+.particles-js-canvas-el {
+    animation: particle-glow 4s infinite;
+}
