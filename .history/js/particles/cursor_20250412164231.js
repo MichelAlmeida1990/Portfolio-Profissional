@@ -134,36 +134,23 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.classList.remove('active');
   });
   
-  // Identifica elementos do menu
-  const menuElements = document.querySelectorAll('.menu-hamburger, .nav-links a, .social-links a');
-
-  // Adiciona classe específica para elementos do menu
-  menuElements.forEach(element => {
-    element.classList.add('menu-element');
-    
-    // Garante que o cursor padrão seja usado nos elementos do menu
-    element.addEventListener('mouseenter', () => {
-      if (document.body.classList.contains('custom-cursor-enabled')) {
-        cursor.classList.remove('hover'); // Remove qualquer efeito de hover
-      }
-    });
-  });
-  
   // Melhor detecção de elementos clicáveis (mais abrangente)
   function updateCursorHoverState() {
     const hoveredElements = document.querySelectorAll(':hover');
     const isHoveringClickable = Array.from(hoveredElements).some(element => {
-      // Verificar se é um elemento clicável
+      // Verificar se é um elemento clicável mas não faz parte do menu de navegação
       const isClickable = element.tagName === 'A' || 
                           element.tagName === 'BUTTON' || 
                           element.role === 'button' || 
                           element.tagName === 'INPUT' ||
                           element.classList.contains('clickable');
       
-      // Verificar se NÃO é um elemento do menu
-      const isMenuElement = element.classList.contains('menu-element');
+      // Verificar se não é parte do menu de navegação
+      const isNavigation = element.closest('.nav-links') !== null || 
+                           element.classList.contains('menu-hamburger') || 
+                           element.classList.contains('nav-item');
       
-      return isClickable && !isMenuElement;
+      return isClickable && !isNavigation;
     });
     
     if (isHoveringClickable) {
