@@ -49,7 +49,7 @@ git clone https://github.com/MichelAlmeida1990/portfolio.git
 Navegue até o diretório do projeto:
 
 Copiar
-cd portfolio
+cd portfolio :)
 Abra o arquivo index.html em seu navegador ou use uma extensão como Live Server no VSCode.
 
 ⚙️ Personalização
