@@ -1,112 +1,118 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Inicializando partículas nos cards...");
     
-    // Configurações para as partículas dos cards
-    const particlesConfig = {
-        "particles": {
-            "number": {
-                "value": 80,  // Aumentado de ~30-40 para 80 partículas
-                "density": {
-                    "enable": true,
-                    "value_area": 800
-                }
-            },
-            "color": {
-                "value": "#4A8FFF"  // Cor padrão para o tema claro (azul)
-            },
-            "shape": {
-                "type": "circle",
-                "stroke": {
-                    "width": 0,
-                    "color": "#000000"
-                },
-                "polygon": {
-                    "nb_sides": 5
-                }
-            },
-            "opacity": {
-                "value": 0.6,
-                "random": true,
-                "anim": {
-                    "enable": true,
-                    "speed": 0.8,
-                    "opacity_min": 0.1,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 3,
-                "random": true,
-                "anim": {
-                    "enable": true,
-                    "speed": 2,
-                    "size_min": 0.1,
-                    "sync": false
-                }
-            },
-            "line_linked": {
-                "enable": true,
-                "distance": 150,
-                "color": "#4A8FFF",
-                "opacity": 0.4,
-                "width": 1
-            },
-            "move": {
-                "enable": true,
-                "speed": 2,  // Velocidade aumentada para mais movimento
-                "direction": "none",
-                "random": true,
-                "straight": false,
-                "out_mode": "out",
-                "bounce": false,
-                "attract": {
-                    "enable": true,
-                    "rotateX": 600,
-                    "rotateY": 1200
-                }
-            }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": {
-                    "enable": true,
-                    "mode": "grab"
-                },
-                "onclick": {
-                    "enable": true,
-                    "mode": "push"  // Adiciona mais partículas ao clicar
-                },
-                "resize": true
-            },
-            "modes": {
-                "grab": {
-                    "distance": 140,
-                    "line_linked": {
-                        "opacity": 1
+    // Função para determinar a configuração baseada no tamanho da tela
+    function getParticlesConfig() {
+        const isMobile = window.innerWidth < 768;
+        const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+        
+        return {
+            "particles": {
+                "number": {
+                    // Reduzir número de partículas em dispositivos menores
+                    "value": isMobile ? 40 : (isTablet ? 60 : 80),
+                    "density": {
+                        "enable": true,
+                        "value_area": isMobile ? 600 : 800
                     }
                 },
-                "bubble": {
-                    "distance": 400,
-                    "size": 40,
-                    "duration": 2,
-                    "opacity": 8,
-                    "speed": 3
+                "color": {
+                    "value": "#4A8FFF"  // Cor padrão para o tema claro (azul)
                 },
-                "repulse": {
-                    "distance": 200,
-                    "duration": 0.4
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
                 },
-                "push": {
-                    "particles_nb": 4  // Adiciona 4 partículas ao clicar
+                "opacity": {
+                    "value": 0.6,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": isMobile ? 0.6 : 0.8,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
                 },
-                "remove": {
-                    "particles_nb": 2
+                "size": {
+                    "value": isMobile ? 2 : 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": isMobile ? 1.5 : 2,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": isMobile ? 120 : 150,
+                    "color": "#4A8FFF",
+                    "opacity": 0.4,
+                    "width": isMobile ? 0.8 : 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": isMobile ? 1.5 : 2,  // Velocidade reduzida em dispositivos móveis
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
                 }
-            }
-        },
-        "retina_detect": true
-    };
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": !isMobile, // Desativar hover em dispositivos móveis
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": isMobile ? 100 : 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": isMobile ? 2 : 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        };
+    }
     
     // Cores para os diferentes temas
     const colors = {
@@ -129,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Atualizar todas as instâncias de particles.js para os cards
         if (window.pJSDom) {
-            // Começar do índice 1 para pular as partículas do background principal (se existir)
             for (let i = 0; i < window.pJSDom.length; i++) {
                 try {
                     if (window.pJSDom[i] && window.pJSDom[i].pJS) {
@@ -164,25 +169,72 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Inicializar partículas em todos os containers de cards
-    const cardContainers = document.querySelectorAll('.card-particles-container');
-    console.log(`Encontrados ${cardContainers.length} containers para partículas`);
-    
-    cardContainers.forEach((container, index) => {
-        const containerId = `card-particles-${index}`;
-        container.id = containerId;
+    function initializeParticles() {
+        const cardContainers = document.querySelectorAll('.card-particles-container');
+        console.log(`Encontrados ${cardContainers.length} containers para partículas`);
         
-        // Inicializar partículas neste container
-        try {
-            particlesJS(containerId, particlesConfig);
-            console.log(`Partículas inicializadas para ${containerId}`);
-        } catch (error) {
-            console.error(`Erro ao inicializar partículas para ${containerId}:`, error);
+        // Obter configuração baseada no tamanho atual da tela
+        const particlesConfig = getParticlesConfig();
+        
+        // Limpar instâncias existentes de partículas nos cards
+        if (window.pJSDom) {
+            const instancesToRemove = [];
+            for (let i = 0; i < window.pJSDom.length; i++) {
+                try {
+                    if (window.pJSDom[i] && window.pJSDom[i].pJS) {
+                        const canvasElement = window.pJSDom[i].pJS.canvas.el;
+                        if (canvasElement && canvasElement.parentElement && 
+                            canvasElement.parentElement.classList.contains('card-particles-container')) {
+                            instancesToRemove.push(i);
+                            // Remover o canvas
+                            if (canvasElement.parentElement) {
+                                canvasElement.parentElement.removeChild(canvasElement);
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error("Erro ao limpar partículas:", error);
+                }
+            }
+            
+            // Remover instâncias do array pJSDom (de trás para frente para evitar problemas de índice)
+            for (let i = instancesToRemove.length - 1; i >= 0; i--) {
+                window.pJSDom.splice(instancesToRemove[i], 1);
+            }
         }
-    });
+        
+        // Inicializar novas instâncias
+        cardContainers.forEach((container, index) => {
+            const containerId = `card-particles-${index}`;
+            container.id = containerId;
+            
+            // Inicializar partículas neste container
+            try {
+                particlesJS(containerId, particlesConfig);
+                console.log(`Partículas inicializadas para ${containerId}`);
+            } catch (error) {
+                console.error(`Erro ao inicializar partículas para ${containerId}:`, error);
+            }
+        });
+        
+        // Aplicar cores de acordo com o tema atual
+        const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
+        setTimeout(() => {
+            window.updateParticlesColors(isDarkTheme);
+        }, 500);
+    }
     
-    // Aplicar cores de acordo com o tema atual
-    const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
-    setTimeout(() => {
-        window.updateParticlesColors(isDarkTheme);
-    }, 500);
+    // Inicializar partículas
+    initializeParticles();
+    
+    // Reinicializar partículas quando a janela for redimensionada
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        // Usar debounce para evitar múltiplas reinicializações durante o redimensionamento
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            console.log("Janela redimensionada, reinicializando partículas");
+            initializeParticles();
+        }, 250);
+    });
 });
