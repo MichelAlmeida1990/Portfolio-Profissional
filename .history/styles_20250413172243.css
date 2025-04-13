@@ -196,12 +196,7 @@ section {
     background-size: 200% 200%;
 }
 
-.hero {
-    background: var(--hero-background);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
+
 
 @keyframes gradient {
     0% {background-position: 0% 50%;}

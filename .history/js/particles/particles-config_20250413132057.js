@@ -56,9 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let particlesArray = [];
   let isMobile = window.innerWidth <= 768;
   
-  // Expor a variável particlesArray globalmente para permitir a alteração das cores
-  window.particlesArray = particlesArray;
-  
   // Classe Partícula (configuração melhorada para visibilidade)
   class Particle {
     constructor() {
@@ -74,17 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
       this.speedX = Math.random() * speedFactor - (speedFactor/2);
       this.speedY = Math.random() * speedFactor - (speedFactor/2);
       
-      // Cor adaptada ao tema atual
+      // Cor ajustada para visibilidade em diferentes telas
       const opacity = isMobile ? 
         Math.random() * 0.5 + 0.2 :  // Menos opaco em mobile para não interferir no conteúdo
         Math.random() * 0.7 + 0.3;
-      
-      // Verificar tema atual
-      const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
-      
-      this.color = isDarkTheme 
-        ? `rgba(255, 215, 0, ${opacity})` // Dourado para tema escuro
-        : `rgba(120, 180, 255, ${opacity})`; // Azul para tema claro
+      this.color = `rgba(120, 180, 255, ${opacity})`;
     }
     
     update() {
@@ -129,19 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 0; i < particleCount; i++) {
       particlesArray.push(new Particle());
     }
-    
-    // Atualizar a referência global
-    window.particlesArray = particlesArray;
   }
   
   // Conectar partículas com linhas
   function connectParticles() {
     const maxDistance = isMobile ? 80 : 120;
     const lineWidth = isMobile ? 0.5 : 0.8;
-    
-    // Verificar tema atual para cor das linhas
-    const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
-    const lineColorBase = isDarkTheme ? 'rgba(255, 215, 0,' : 'rgba(100, 160, 255,';
     
     for (let a = 0; a < particlesArray.length; a++) {
       // Em mobile, conectar menos partículas para melhor desempenho
@@ -155,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (distance < maxDistance) {
           const opacity = 1 - (distance / maxDistance);
           // Menor opacidade em mobile para maior legibilidade do conteúdo
-          ctx.strokeStyle = `${lineColorBase} ${opacity * (isMobile ? 0.4 : 0.7)})`;
+          ctx.strokeStyle = `rgba(100, 160, 255, ${opacity * (isMobile ? 0.4 : 0.7)})`;
           ctx.lineWidth = lineWidth;
           ctx.beginPath();
           ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
