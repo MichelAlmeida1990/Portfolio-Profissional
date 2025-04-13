@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michel Paulo | Desenvolvedor Front-End</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/menu-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+    <!-- Navbar com menu lateral -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <i class="fas fa-laptop-code"></i>
+                <span>Michel Paulo</span>
+            </a>
+        </div>
+        
+        <div class="menu-hamburger" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <div class="menu-overlay" id="menuOverlay">
+            <!-- Canvas para partículas -->
+            <canvas id="particleCanvas"></canvas>
+            
+            <!-- Botão de fechar -->
+            <button class="menu-close"><i class="fas fa-times"></i></button>
+            
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-item">Início</a></li>
+                    <li><a href="#sobre" class="nav-item">Sobre</a></li>
+                    <li><a href="#tecnologias" class="nav-item">Tecnologias</a></li>
+                    <li><a href="#certificados" class="nav-item">Certificados</a></li>
+                    <li><a href="#projetos" class="nav-item">Projetos</a></li>
+                    <li><a href="#formacao" class="nav-item">Formação</a></li>
+                    <li><a href="#contato" class="nav-item">Contato</a></li>
+                </ul>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/michel-paulo-de-almeida/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/MichelAlmeida1990" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/michel.almeida1990" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Botão de alternância de tema -->
+ <!-- Modificar para usar o ID consistente -->
+<button class="theme-toggle" id="theme-toggle" title="Mudar para modo escuro">
+    <i class="fas fa-moon" id="themeIcon"></i>
+</button>
+
+
+    <!-- Hero Section com animação de digitação e partículas -->
+    <section id="home" class="hero">
+        <!-- Canvas para partículas interativas -->
+        <div id="particles-js" class="particles-container"></div>
+        
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+            <h1>Michel Paulo de Almeida</h1>
+            <div class="typing-text">
+                <span id="text-animation"></span><span class="cursor">|</span>
+            </div>
+            <p>Desenvolvedor Front-End e entusiasta de Cloud Computing</p>
+            <div class="hero-buttons">
+                <a href="#projetos" class="btn primary-btn">Ver Projetos</a>
+                <a href="#contato" class="btn secondary-btn">Contato</a>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+            <div class="profile-placeholder">
+                <img src="./image/foto perfil.png" alt="Foto perfil" id="profile-img" onerror="this.src='https://via.placeholder.com/300x300'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="sobre">
+        <div class="sobre-content">
+            <h2 class="section-title" data-aos="fade-up">Sobre Mim</h2>
+            
+            <div class="sobre-text" data-aos="fade-up" data-aos-delay="200">
+                <p>Olá! Sou Michel Paulo, um desenvolvedor Front-End apaixonado por criar interfaces web interativas e responsivas. Com experiência em desenvolvimento web e cloud computing, busco constantemente aprender novas tecnologias e aprimorar minhas habilidades.</p>
+                <p>Meu objetivo é combinar design atraente com funcionalidade intuitiva para criar experiências digitais memoráveis. Acredito que a web deve ser acessível e agradável para todos os usuários.</p>
+            </div>
+            
+            <div class="cards-container">
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-code"></i>
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Criação de sites e aplicações web modernas, responsivas e otimizadas para diferentes dispositivos e navegadores.</p>
+                </div>
+                
+                <div class="card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Computing</h3>
+                    <p>Implementação e gerenciamento de soluções em nuvem, utilizando serviços AWS para hospedar e escalar aplicações.</p>
+                </div>
+                
+                <div class="card" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Design Responsivo</h3>
+                    <p>Desenvolvimento de interfaces que se adaptam perfeitamente a qualquer tamanho de tela, proporcionando uma experiência consistente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologias Section -->
+    <section id="tecnologias" class="tecnologias">
+        <h2 class="section-title" data-aos="fade-up">Tecnologias</h2>
+        
+        <div class="tech-container">
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="100">
+                <h3>Front-End</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-bootstrap"></i>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="200">
+                <h3>Back-End</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-server"></i>
+                        <span>Express</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="300">
+                <h3>Cloud & DevOps</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-docker"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="400">
+                <h3>Ferramentas</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-figma"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-terminal"></i>
+                        <span>Terminal</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-npm"></i>
+                        <span>NPM</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-code-branch"></i>
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificados Section -->
+    <section id="certificados" class="certificados">
+        <h2 class="section-title" data-aos="fade-up">Certificados</h2>
+        
+        <div class="certificados-slider" data-aos="fade-up" data-aos-delay="200">
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>AWS Cloud Practitioner</h3>
+                            <p>Amazon Web Services</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>React Developer</h3>
+                            <p>Udemy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" alt="JavaScript">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>JavaScript Avançado</h3>
+                            <p>Alura</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>Node.js Essentials</h3>
+                            <p>Digital Innovation One</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="certificado-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5">
+                        </div>
+                        <div class="certificado-info">
+                            <h3>HTML5 e CSS3</h3>
+                            <p>Curso em Vídeo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-arrows">
+                <button class="arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos Section -->
+    <section id="projetos" class="projetos">
+        <h2 class="section-title" data-aos="fade-up">Projetos</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="E-commerce Website">
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce Website</h3>
+                    <p>Plataforma completa de e-commerce com carrinho de compras, sistema de pagamento e painel administrativo.</p>
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn primary-btn">Demo</a>
+                        <a href="#" class="btn secondary-btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dashboard App">
+                </div>
+                <div class="project-info">
+                    <h3>Dashboard App</h3>
+                    <p>Painel administrativo com gráficos interativos, análise de dados e recursos de gerenciamento de usuários.</p>
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Chart.js</span>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn primary-btn">Demo</a>
+                        <a href="#" class="btn secondary-btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Weather App">
+                </div>
+                <div class="project-info">
+                    <h3>Weather App</h3>
+                    <p>Aplicativo de previsão do tempo com geolocalização, dados em tempo real e visualizações para vários dias.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>API</span>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn primary-btn">Demo</a>
+                        <a href="#" class="btn secondary-btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formação Section -->
+    <section id="formacao" class="formacao">
+        <h2 class="section-title" data-aos="fade-up">Formação</h2>
+        
+        <div class="education-container">
+            <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="education-info">
+                    <h3>Bacharelado em Sistemas de Informação</h3>
+                    <h4>Universidade XYZ</h4>
+                    <div class="education-date">2015 - 2019</div>
+                    <p>Formação completa em Sistemas de Informação com foco em desenvolvimento de software, banco de dados e gestão de projetos de TI.</p>
+                </div>
+            </div>
+            
+            <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="education-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="education-info">
+                    <h3>Especialização em Desenvolvimento Web</h3>
+                    <h4>Instituto ABC</h4>
+                    <div class="education-date">2020 - 2021</div>
+                    <p>Especialização em tecnologias web modernas, incluindo frameworks JavaScript, arquiteturas de front-end e integração com APIs.</p>
+                </div>
+            </div>
+            
+            <div class="education-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="education-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="education-info">
+                    <h3>Bootcamp Full Stack Developer</h3>
+                    <h4>Digital Innovation One</h4>
+                    <div class="education-date">2021</div>
+                    <p>Programa intensivo de desenvolvimento full stack, abrangendo tecnologias front-end, back-end, banco de dados e implantação em nuvem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="contato">
+        <h2 class="section-title" data-aos="fade-up">Contato</h2>
+        
+        <div class="contato-container">
+            <div class="contato-info" data-aos="fade-up" data-aos-delay="100">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>michel.almeida@email.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Telefone</h3>
+                        <p>(11) 98765-4321</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Localização</h3>
+                        <p>São Paulo, SP - Brasil</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/michel-paulo-de-almeida/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/MichelAlmeida1990" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/michel.almeida1990" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="contato-form" data-aos="fade-up" data-aos-delay="200">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Nome</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="subject" required>
+                        <label for="subject">Assunto</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" required></textarea>
+                        <label for="message">Mensagem</label>
+                    </div>
+                    
+                    <button type="submit" class="btn primary-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Michel Paulo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles/particles-config.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/menu-particles.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="scripts.js"></script>
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+    <!-- Botão de alternância de tema -->
+
+
+<!-- Links para os arquivos de tema -->
+<link rel="stylesheet" href="css/theme.css">
+
+</body>
+</html>
