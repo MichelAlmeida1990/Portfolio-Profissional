@@ -109,6 +109,6 @@ LinkedIn: https://www.linkedin.com/in/michel-paulo-de-almeida/
 
 GitHub: https://github.com/MichelAlmeida1990
 
-Link do Projeto: https://github.com/MichelAlmeida1990/portfolio
+Link do Projeto: https://michelalmeida1990.github.io/Portfolio-Profissional/
 
 ⭐️ Feito com ❤️ por Michel Paulo de Almeida
