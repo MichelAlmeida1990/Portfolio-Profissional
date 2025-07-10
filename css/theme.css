@@ -19,6 +19,13 @@
     --footer-text: #FFFFFF;
     --particle-color: rgba(120, 180, 255, 0.7);
     --particle-line-color: rgba(100, 160, 255, 0.7);
+    --text-secondary: #6B7280;
+    --form-border: #D1D5DB;
+    --form-label: #9CA3AF;
+    --input-background: #F9FAFB;
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
     
     /* Adicionando a imagem de fundo original para o tema claro */
     --hero-background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(31, 41, 55, 0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
@@ -44,6 +51,13 @@
     --footer-text: #F3F4F6;
     --particle-color: rgba(255, 215, 0, 0.7);
     --particle-line-color: rgba(255, 215, 0, 0.5);
+    --text-secondary: #9CA3AF;
+    --form-border: #374151;
+    --form-label: #6B7280;
+    --input-background: #1F2937;
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
     
     /* Fundo escuro para o hero no tema escuro */
     --hero-background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(31, 41, 55, 0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
