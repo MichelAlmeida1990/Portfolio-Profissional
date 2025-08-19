@@ -632,42 +632,27 @@ section {
     top: 50%;
     left: 3rem;
     transform: translateY(-50%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font: 400 0.85rem helvetica,sans-serif;
     color: white;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    text-shadow: 0 3px 8px rgba(0,0,0,0.5);
     opacity: 0;
     display: none;
-    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
-    backdrop-filter: blur(15px);
-    padding: 2rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .content .title {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    font-weight: 700;
-    font-size: 2.2rem;
-    margin-bottom: 1.2rem;
-    color: #ffffff;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
-    letter-spacing: 1px;
-    line-height: 1.2;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-family: 'arial-black';
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-shadow: 0 3px 8px rgba(0,0,0,0.8);
 }
 
 .content .description {
-    line-height: 1.8;
-    margin: 1.2rem 0 1.8rem;
-    font-size: 1.1rem;
-    font-weight: 400;
-    opacity: 0.95;
-    color: #f8f9fa;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    line-height: 1.7;
+    margin: 1rem 0 1.5rem;
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
 .project-tags {
@@ -680,22 +665,17 @@ section {
 .project-tags span {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    letter-spacing: 0.5px;
 }
 
 .project-tags span:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .project-buttons {
@@ -705,53 +685,37 @@ section {
 }
 
 .project-buttons .btn {
-    padding: 14px 24px;
-    font-size: 0.95rem;
-    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    border-radius: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     border: 2px solid transparent;
     cursor: pointer;
     display: inline-block;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
 }
 
 .project-buttons .primary-btn {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .project-buttons .btn:not(.primary-btn) {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.1);
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    backdrop-filter: blur(10px);
 }
 
 .project-buttons .btn:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-    letter-spacing: 1px;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 .project-buttons .primary-btn:hover {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-}
-
-.project-buttons .btn:not(.primary-btn):hover {
-    background: rgba(255,255,255,0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .item:nth-of-type(2) .content {

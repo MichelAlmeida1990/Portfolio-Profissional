@@ -705,53 +705,37 @@ section {
 }
 
 .project-buttons .btn {
-    padding: 14px 24px;
-    font-size: 0.95rem;
-    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    border-radius: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     border: 2px solid transparent;
     cursor: pointer;
     display: inline-block;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
 }
 
 .project-buttons .primary-btn {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .project-buttons .btn:not(.primary-btn) {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.1);
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    backdrop-filter: blur(10px);
 }
 
 .project-buttons .btn:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-    letter-spacing: 1px;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 .project-buttons .primary-btn:hover {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-}
-
-.project-buttons .btn:not(.primary-btn):hover {
-    background: rgba(255,255,255,0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .item:nth-of-type(2) .content {

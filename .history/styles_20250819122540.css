@@ -568,268 +568,209 @@ section {
     box-shadow: none;
 }
 
-/* Projetos com Slider Moderno */
+/* Projetos com Carrossel Moderno */
 .projetos {
     background-color: var(--background-color);
     position: relative;
+    overflow: hidden;
     padding: 80px 20px;
 }
 
-.projects-slider-container {
+.projects-carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
     position: relative;
-    width: 100%;
-    height: 600px;
-    margin: 40px 0;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    border-radius: 20px;
-    overflow: hidden;
 }
 
-.slider {
-    list-style: none;
-    padding: 0;
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 0;
+}
+
+.carousel-track .project-card {
+    min-width: 100%;
+    flex-shrink: 0;
     margin: 0;
-    height: 100%;
-    position: relative;
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.7;
 }
 
-.item {
-    width: 200px;
-    height: 300px;
-    list-style-type: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    background-position: center;
-    background-size: cover;
-    border-radius: 20px;
-    box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
-    transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
-    overflow: hidden;
-}
-
-.item:nth-child(1), .item:nth-child(2) {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    transform: none;
-    border-radius: 0;
-    box-shadow: none;
+.carousel-track .project-card.active {
+    transform: scale(1);
     opacity: 1;
 }
 
-.item:nth-child(3) { left: 50%; }
-.item:nth-child(4) { left: calc(50% + 220px); }
-.item:nth-child(5) { left: calc(50% + 440px); }
-.item:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
-.item:nth-child(7) { left: calc(50% + 880px); opacity: 0; }
-
-.content {
-    width: min(30vw,400px);
+/* Controles do Carrossel */
+.carousel-controls {
     position: absolute;
     top: 50%;
-    left: 3rem;
+    left: 0;
+    right: 0;
     transform: translateY(-50%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.7);
-    opacity: 0;
-    display: none;
-    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
-    backdrop-filter: blur(15px);
-    padding: 2rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.content .title {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    font-weight: 700;
-    font-size: 2.2rem;
-    margin-bottom: 1.2rem;
-    color: #ffffff;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
-    letter-spacing: 1px;
-    line-height: 1.2;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.content .description {
-    line-height: 1.8;
-    margin: 1.2rem 0 1.8rem;
-    font-size: 1.1rem;
-    font-weight: 400;
-    opacity: 0.95;
-    color: #f8f9fa;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-}
-
-.project-tags {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 1.5rem 0;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 10;
 }
 
-.project-tags span {
+.carousel-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    letter-spacing: 0.5px;
-}
-
-.project-tags span:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
-.project-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 1.5rem;
-}
-
-.project-buttons .btn {
-    padding: 14px 24px;
-    font-size: 0.95rem;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    border: 2px solid transparent;
+    font-size: 18px;
     cursor: pointer;
-    display: inline-block;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
+    pointer-events: all;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.project-buttons .primary-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.project-buttons .btn:not(.primary-btn) {
-    background: rgba(255,255,255,0.15);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.project-buttons .btn:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-    letter-spacing: 1px;
-}
-
-.project-buttons .primary-btn:hover {
+.carousel-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
-.project-buttons .btn:not(.primary-btn):hover {
-    background: rgba(255,255,255,0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+.carousel-btn:active {
+    transform: scale(0.95);
 }
 
-.item:nth-of-type(2) .content {
-    display: block;
-    animation: show 0.75s ease-in-out 0.3s forwards;
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: scale(0.8);
 }
 
-@keyframes show {
-    0% {
-        filter: blur(5px);
-        transform: translateY(calc(-50% + 75px));
-    }
-    100% {
-        opacity: 1;
-        filter: blur(0);
-    }
-}
-
-.nav {
+/* Indicadores de Progresso */
+.carousel-indicators {
     position: absolute;
-    bottom: 2rem;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 5;
-    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
 }
 
-.nav .btn {
-    background-color: rgba(255,255,255,0.5);
-    color: rgba(0,0,0,0.7);
-    border: 2px solid rgba(0,0,0,0.6);
-    margin: 0 0.25rem;
-    padding: 0.75rem;
+.progress-bar {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.indicators-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
     cursor: pointer;
-    font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
-.nav .btn:hover {
-    background-color: rgba(255,255,255,0.8);
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+.dot.active {
+    background: var(--primary-color);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--primary-color);
 }
 
-/* Responsividade */
-@media (width > 650px) and (width < 900px) {
-    .content .title { font-size: 1.5rem; }
-    .content .description { font-size: 0.9rem; }
-    .project-buttons .btn { font-size: 0.8rem; }
-    
-    .item {
-        width: 160px;
-        height: 270px;
+/* Animações do Carrossel */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100px) scale(0.9);
     }
-    
-    .item:nth-child(3) { left: 50%; }
-    .item:nth-child(4) { left: calc(50% + 170px); }
-    .item:nth-child(5) { left: calc(50% + 340px); }
-    .item:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
-    .item:nth-child(7) { left: calc(50% + 680px); opacity: 0; }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
 }
 
-@media (width < 650px) {
-    .content .title { font-size: 1.2rem; }
-    .content .description { font-size: 0.8rem; }
-    .project-buttons .btn { font-size: 0.7rem; }
-    
-    .item {
-        width: 130px;
-        height: 220px;
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100px) scale(0.9);
+    }
+}
+
+.carousel-track .project-card.slide-in {
+    animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-track .project-card.slide-out {
+    animation: slideOut 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsividade do Carrossel */
+@media screen and (max-width: 768px) {
+    .carousel-controls {
+        padding: 0 10px;
     }
     
-    .item:nth-child(3) { left: 50%; }
-    .item:nth-child(4) { left: calc(50% + 140px); }
-    .item:nth-child(5) { left: calc(50% + 280px); }
-    .item:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
-    .item:nth-child(7) { left: calc(50% + 560px); opacity: 0; }
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .progress-bar {
+        width: 150px;
+    }
+    
+    .carousel-indicators {
+        bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .progress-bar {
+        width: 120px;
+    }
 }
 
 .project-card {

@@ -186,5 +186,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Função para expandir/contrair detalhes dos projetos
+    function toggleProjectDetails(button) {
+        const projectCard = button.closest('.project-card');
+        const details = projectCard.querySelector('.project-details');
+        const expandText = button.querySelector('.expand-text');
+        const expandIcon = button.querySelector('.expand-icon');
+        
+        if (details.classList.contains('expanded')) {
+            // Contrair
+            details.classList.remove('expanded');
+            expandText.textContent = 'Saiba Mais';
+            button.classList.remove('expanded');
+        } else {
+            // Expandir
+            details.classList.add('expanded');
+            expandText.textContent = 'Ver Menos';
+            button.classList.add('expanded');
+        }
+    }
+
+    // Fechar todos os detalhes quando clicar fora
+    document.addEventListener('click', function(event) {
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            const details = card.querySelector('.project-details');
+            const button = card.querySelector('.expand-btn');
+            
+            if (details && details.classList.contains('expanded')) {
+                const isClickInside = card.contains(event.target);
+                if (!isClickInside) {
+                    details.classList.remove('expanded');
+                    const expandText = button.querySelector('.expand-text');
+                    const expandIcon = button.querySelector('.expand-icon');
+                    expandText.textContent = 'Saiba Mais';
+                    button.classList.remove('expanded');
+                }
+            }
+        });
+    });
+
 
 });

@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <!-- Navbar com menu lateral -->
@@ -327,139 +325,136 @@
     <section id="projetos" class="projetos">
         <h2 class="section-title" data-aos="fade-up">Meus Projetos</h2>
         
-        <div class="projects-slider-container">
-            <ul class='slider'>
-                <!-- App de Academia -->
-                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                    <div class='content'>
-                        <h2 class='title'>App de Academia</h2>
-                        <p class='description'>Aplicação React completa e profissional para gestão de academias. Sistema robusto com autenticação Firebase, dashboard interativo, gerenciamento de perfis, catálogo de exercícios, estatísticas avançadas com gráficos e interface moderna com Material-UI.</p>
-                        <div class="project-tags">
-                            <span>React 18</span>
-                            <span>Firebase</span>
-                            <span>Material-UI</span>
-                            <span>Chart.js</span>
+        <div class="carousel-3d-container">
+            <div class="container">
+                <div class="stage">
+                    <div class="ring">
+                        <!-- App de Academia -->
+                        <div class="img" data-project="academia">
+                            <div class="project-overlay">
+                                <h3>App de Academia</h3>
+                                <p>Aplicação React completa para gestão de academias</p>
+                                <div class="project-tags">
+                                    <span>React 18</span>
+                                    <span>Firebase</span>
+                                    <span>Material-UI</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://michelalmeida1990.github.io/App-de-academia/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                    <a href="https://github.com/MichelAlmeida1990/App-de-academia" target="_blank" class="btn">Código</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-buttons">
-                            <a href="https://michelalmeida1990.github.io/App-de-academia/" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/App-de-academia" target="_blank" class="btn">Código</a>
+                        
+                        <!-- Sistema de Gestão Escolar -->
+                        <div class="img" data-project="escolar">
+                            <div class="project-overlay">
+                                <h3>Sistema de Gestão Escolar</h3>
+                                <p>Sistema completo full-stack para gestão acadêmica</p>
+                                <div class="project-tags">
+                                    <span>Python</span>
+                                    <span>Django</span>
+                                    <span>PostgreSQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://Michel1990.pythonanywhere.com" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                    <a href="https://github.com/MichelAlmeida1990/gestao_escolar" target="_blank" class="btn">Código</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                
-                <!-- Sistema de Gestão Escolar -->
-                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                    <div class='content'>
-                        <h2 class='title'>Sistema de Gestão Escolar</h2>
-                        <p class='description'>Sistema completo full-stack para gestão acadêmica e administrativa de escolas. Inclui módulos de alunos, professores, turmas, notas, frequência, biblioteca, financeiro e comunicados.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Django</span>
-                            <span>PostgreSQL</span>
-                            <span>Bootstrap</span>
+                        
+                        <!-- Barbearia do Di -->
+                        <div class="img" data-project="barbearia">
+                            <div class="project-overlay">
+                                <h3>Barbearia do Di</h3>
+                                <p>Site responsivo para barbearia com agendamento</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://barbearia-do-di.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                    <a href="https://github.com/MichelAlmeida1990/barbearia-do-di" target="_blank" class="btn">Código</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-buttons">
-                            <a href="https://Michel1990.pythonanywhere.com" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/gestao_escolar" target="_blank" class="btn">Código</a>
+                        
+                        <!-- Santo Drink -->
+                        <div class="img" data-project="santo-drink">
+                            <div class="project-overlay">
+                                <h3>Santo Drink</h3>
+                                <p>E-commerce de bebidas com carrinho de compras</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://michelalmeida1990.github.io/SITE-DE-BEBIDAS-DO-SANTO/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                    <a href="https://github.com/MichelAlmeida1990/SITE-DE-BEBIDAS-DO-SANTO" target="_blank" class="btn">Código</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                
-                <!-- Barbearia do Di -->
-                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                    <div class='content'>
-                        <h2 class='title'>Barbearia do Di</h2>
-                        <p class='description'>Site responsivo para barbearia com sistema de agendamento e galeria de serviços. Design moderno e funcional para estabelecimentos de beleza.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Responsive</span>
+                        
+                        <!-- Psicóloga Lígia Silva -->
+                        <div class="img" data-project="psicologa">
+                            <div class="project-overlay">
+                                <h3>Site Psicóloga Lígia Silva</h3>
+                                <p>Site profissional para psicóloga clínica</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://michelalmeida1990.github.io/Projeto-Psicologa/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                    <a href="https://github.com/MichelAlmeida1990/Projeto-Psicologa" target="_blank" class="btn">Código</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-buttons">
-                            <a href="https://barbearia-do-di.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/barbearia-do-di" target="_blank" class="btn">Código</a>
+                        
+                        <!-- Imobiliária -->
+                        <div class="img" data-project="imobiliaria">
+                            <div class="project-overlay">
+                                <h3>Site Imobiliária</h3>
+                                <p>Site profissional para imobiliária com filtros</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://projeto-imobiliaria-five.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                    <a href="https://github.com/MichelAlmeida1990/projeto-imobiliaria" target="_blank" class="btn">Código</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                
-                <!-- Santo Drink -->
-                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                    <div class='content'>
-                        <h2 class='title'>Santo Drink</h2>
-                        <p class='description'>E-commerce de bebidas com catálogo de produtos e sistema de carrinho de compras. Interface intuitiva para vendas online de bebidas.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>E-commerce</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://michelalmeida1990.github.io/SITE-DE-BEBIDAS-DO-SANTO/" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/SITE-DE-BEBIDAS-DO-SANTO" target="_blank" class="btn">Código</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <!-- Psicóloga Lígia Silva -->
-                <li class='item' style="background-image: url('./image/Psicologa.png')">
-                    <div class='content'>
-                        <h2 class='title'>Site Psicóloga Lígia Silva</h2>
-                        <p class='description'>Site profissional para psicóloga clínica especializada em Terapia Cognitivo-Comportamental (TCC). Inclui informações sobre áreas de atendimento, tratamento, FAQ e formulário de contato.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Google Meet</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://michelalmeida1990.github.io/Projeto-Psicologa/" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/Projeto-Psicologa" target="_blank" class="btn">Código</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <!-- Imobiliária -->
-                <li class='item' style="background-image: url('./image/imobiliaria.png')">
-                    <div class='content'>
-                        <h2 class='title'>Site Imobiliária</h2>
-                        <p class='description'>Site profissional para imobiliária com catálogo de imóveis, sistema de busca, filtros avançados e formulário de contato para clientes interessados.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Filtros</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://projeto-imobiliaria-five.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/projeto-imobiliaria" target="_blank" class="btn">Código</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <!-- Fotógrafa Cristiane Justino -->
-                <li class='item' style="background-image: url('./image/fotografo.png')">
-                    <div class='content'>
-                        <h2 class='title'>Site Fotógrafa Cristiane Justino</h2>
-                        <p class='description'>Site profissional para fotógrafa com portfólio, sistema de agendamento online, galeria de trabalhos e formulário de contato. Design elegante e responsivo.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Agendamento</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://michelalmeida1990.github.io/Projeto-Fotografo/" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/Projeto-Fotografo" target="_blank" class="btn">Código</a>
+                        
+                        <!-- Fotógrafa Cristiane Justino -->
+                        <div class="img" data-project="fotografo">
+                            <div class="project-overlay">
+                                <h3>Site Fotógrafa Cristiane Justino</h3>
+                                <p>Site profissional com portfólio e agendamento</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://michelalmeida1990.github.io/Projeto-Fotografo/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                    <a href="https://github.com/MichelAlmeida1990/Projeto-Fotografo" target="_blank" class="btn">Código</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
             
-            <nav class='nav'>
-                <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
-                <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
-            </nav>
+            <!-- Instruções -->
+            <div class="carousel-instructions">
+                <p>💡 Arraste para girar • Clique para ver detalhes</p>
+            </div>
         </div>
     </section>
 
@@ -645,7 +640,7 @@
 <script src="js/card-particles.js"></script>
 <script src="js/theme-toggle.js"></script>
 <script src="js/contact-form.js"></script>
-<script src="js/slider.js"></script>
+<script src="js/carousel-3d.js"></script>
 <script src="scripts.js"></script>
 <div class="menu-backdrop" id="menuBackdrop"></div>
 </body>

@@ -1,0 +1,192 @@
+/* Variáveis de tema para modo claro e escuro */
+:root {
+    /* Tema Claro (padrão) */
+    --primary-color: #2563EB;
+    --primary-dark: #1D4ED8;
+    --secondary-color: #10B981;
+    --secondary-dark: #059669;
+    --accent-color: #8B5CF6;
+    --dark-color: #1F2937;
+    --light-color: #F3F4F6;
+    --text-color: #374151;
+    --background-color: #F3F4F6;
+    --card-background: #FFFFFF;
+    --navbar-background: rgba(255, 255, 255, 0.9);
+    --navbar-text: #1F2937;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --footer-background: #1F2937;
+    --footer-text: #FFFFFF;
+    --particle-color: rgba(120, 180, 255, 0.7);
+    --particle-line-color: rgba(100, 160, 255, 0.7);
+    --text-secondary: #6B7280;
+    --form-border: #D1D5DB;
+    --form-label: #9CA3AF;
+    --input-background: #F9FAFB;
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    
+    /* Adicionando a imagem de fundo original para o tema claro */
+    --hero-background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(31, 41, 55, 0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+}
+
+/* Tema Escuro */
+[data-theme='dark'] {
+    --primary-color: #60A5FA;
+    --primary-dark: #3B82F6;
+    --secondary-color: #34D399;
+    --secondary-dark: #10B981;
+    --accent-color: #A78BFA;
+    --dark-color: #F9FAFB;
+    --light-color: #111827;
+    --text-color: #E5E7EB;
+    --background-color: #111827;
+    --card-background: #1F2937;
+    --navbar-background: rgba(17, 24, 39, 0.9);
+    --navbar-text: #F9FAFB;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --footer-background: #0F172A;
+    --footer-text: #F3F4F6;
+    --particle-color: rgba(255, 215, 0, 0.7);
+    --particle-line-color: rgba(255, 215, 0, 0.5);
+    
+    /* Fundo escuro para o hero no tema escuro */
+    --hero-background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(31, 41, 55, 0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+}
+
+/* Transição suave ao alternar temas */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ícone do alternador de tema */
+.theme-toggle {
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    z-index: 999;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Animação ao alternar o tema */
+.theme-transition {
+    animation: themeChange 0.5s ease;
+}
+/* Ajuste para evitar sobreposição com outros botões */
+.theme-toggle {
+    bottom: 90px; /* Aumentar distância do fundo para evitar sobreposição */
+    right: 30px;
+}
+
+
+@keyframes themeChange {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Ajustes específicos para elementos com o tema */
+
+/* Ajuste para o hero usar a variável de fundo */
+.hero {
+    background: var(--hero-background);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Ajustes para cards e elementos de fundo */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.navbar.scrolled {
+    background-color: var(--navbar-background);
+}
+
+.navbar.scrolled a {
+    color: var(--navbar-text);
+}
+
+.card, .tech-group, .certificado-card, .project-card, .education-card, .contato-info, .contato-form {
+    background-color: var(--card-background);
+}
+
+.sobre {
+    background-color: var(--card-background);
+}
+
+.tecnologias, .projetos {
+    background-color: var(--background-color);
+}
+
+.certificados, .formacao {
+    background-color: var(--card-background);
+}
+
+footer {
+    background-color: var(--footer-background);
+    color: var(--footer-text);
+}
+
+/* Ajustes para bordas */
+.card:hover {
+    border-bottom-color: var(--primary-color);
+}
+
+.education-card:hover {
+    border-left-color: var(--primary-color);
+}
+
+/* Ajustes para textos */
+.section-title {
+    color: var(--primary-color);
+}
+
+.card h3, .project-info h3, .education-info h3 {
+    color: var(--dark-color);
+}
+
+/* Ajustes para sombras */
+.card, .tech-group, .certificado-card, .project-card, .education-card, .contato-info, .contato-form {
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.card:hover, .tech-group:hover, .certificado-card:hover, .project-card:hover, .education-card:hover, .contato-info:hover {
+    box-shadow: 0 10px 15px var(--shadow-color);
+}

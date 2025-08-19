@@ -12,10 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <!-- Navbar com menu lateral -->
@@ -323,143 +319,114 @@
         </div>
     </section>
 
-    <!-- Projetos com Carrossel 3D -->
+    <!-- Projetos com Carrossel Interativo -->
     <section id="projetos" class="projetos">
         <h2 class="section-title" data-aos="fade-up">Meus Projetos</h2>
-        
-        <div class="projects-slider-container">
-            <ul class='slider'>
-                <!-- App de Academia -->
-                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                    <div class='content'>
-                        <h2 class='title'>App de Academia</h2>
-                        <p class='description'>Aplicação React completa e profissional para gestão de academias. Sistema robusto com autenticação Firebase, dashboard interativo, gerenciamento de perfis, catálogo de exercícios, estatísticas avançadas com gráficos e interface moderna com Material-UI.</p>
-                        <div class="project-tags">
-                            <span>React 18</span>
-                            <span>Firebase</span>
-                            <span>Material-UI</span>
-                            <span>Chart.js</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://michelalmeida1990.github.io/App-de-academia/" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/App-de-academia" target="_blank" class="btn">Código</a>
-                        </div>
+        <div class="projects-carousel" data-aos="fade-up" data-aos-delay="100">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Projeto Destaque - App de Academia -->
+                    <div class="project-card featured-project">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="App de Academia">
+                    <div class="featured-badge">Projeto Destaque</div>
+                </div>
+                <div class="project-info">
+                    <h3>App de Academia</h3>
+                    <p>Aplicação React completa e profissional para gestão de academias. Sistema robusto com autenticação Firebase, dashboard interativo, gerenciamento de perfis, catálogo de exercícios, estatísticas avançadas com gráficos e interface moderna com Material-UI. Projeto de nível empresarial com arquitetura escalável.</p>
+                    <div class="project-tags">
+                        <span>React 18</span>
+                        <span>Material-UI</span>
+                        <span>Firebase</span>
+                        <span>Chart.js</span>
+                        <span>Framer Motion</span>
+                        <span>React Router</span>
+                        <span>Responsive</span>
                     </div>
-                </li>
-                
-                <!-- Sistema de Gestão Escolar -->
-                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                    <div class='content'>
-                        <h2 class='title'>Sistema de Gestão Escolar</h2>
-                        <p class='description'>Sistema completo full-stack para gestão acadêmica e administrativa de escolas. Inclui módulos de alunos, professores, turmas, notas, frequência, biblioteca, financeiro e comunicados.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Django</span>
-                            <span>PostgreSQL</span>
-                            <span>Bootstrap</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://Michel1990.pythonanywhere.com" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/gestao_escolar" target="_blank" class="btn">Código</a>
-                        </div>
+                    <div class="project-links">
+                        <a href="https://michelalmeida1990.github.io/App-de-academia/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                        <a href="https://github.com/MichelAlmeida1990/App-de-academia" target="_blank" class="btn">Código</a>
                     </div>
-                </li>
-                
-                <!-- Barbearia do Di -->
-                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                    <div class='content'>
-                        <h2 class='title'>Barbearia do Di</h2>
-                        <p class='description'>Site responsivo para barbearia com sistema de agendamento e galeria de serviços. Design moderno e funcional para estabelecimentos de beleza.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Responsive</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://barbearia-do-di.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/barbearia-do-di" target="_blank" class="btn">Código</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <!-- Santo Drink -->
-                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                    <div class='content'>
-                        <h2 class='title'>Santo Drink</h2>
-                        <p class='description'>E-commerce de bebidas com catálogo de produtos e sistema de carrinho de compras. Interface intuitiva para vendas online de bebidas.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>E-commerce</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://michelalmeida1990.github.io/SITE-DE-BEBIDAS-DO-SANTO/" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/SITE-DE-BEBIDAS-DO-SANTO" target="_blank" class="btn">Código</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <!-- Psicóloga Lígia Silva -->
-                <li class='item' style="background-image: url('./image/Psicologa.png')">
-                    <div class='content'>
-                        <h2 class='title'>Site Psicóloga Lígia Silva</h2>
-                        <p class='description'>Site profissional para psicóloga clínica especializada em Terapia Cognitivo-Comportamental (TCC). Inclui informações sobre áreas de atendimento, tratamento, FAQ e formulário de contato.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Google Meet</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://michelalmeida1990.github.io/Projeto-Psicologa/" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/Projeto-Psicologa" target="_blank" class="btn">Código</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <!-- Imobiliária -->
-                <li class='item' style="background-image: url('./image/imobiliaria.png')">
-                    <div class='content'>
-                        <h2 class='title'>Site Imobiliária</h2>
-                        <p class='description'>Site profissional para imobiliária com catálogo de imóveis, sistema de busca, filtros avançados e formulário de contato para clientes interessados.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Filtros</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://projeto-imobiliaria-five.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/projeto-imobiliaria" target="_blank" class="btn">Código</a>
-                        </div>
-                    </div>
-                </li>
-                
-                <!-- Fotógrafa Cristiane Justino -->
-                <li class='item' style="background-image: url('./image/fotografo.png')">
-                    <div class='content'>
-                        <h2 class='title'>Site Fotógrafa Cristiane Justino</h2>
-                        <p class='description'>Site profissional para fotógrafa com portfólio, sistema de agendamento online, galeria de trabalhos e formulário de contato. Design elegante e responsivo.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Agendamento</span>
-                        </div>
-                        <div class="project-buttons">
-                            <a href="https://michelalmeida1990.github.io/Projeto-Fotografo/" target="_blank" class="btn primary-btn">Ver Demo</a>
-                            <a href="https://github.com/MichelAlmeida1990/Projeto-Fotografo" target="_blank" class="btn">Código</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                </div>
+            </div>
             
-            <nav class='nav'>
-                <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
-                <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
-            </nav>
+                    <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Sistema de Gestão Escolar">
+                </div>
+                <div class="project-info">
+                    <h3>Sistema de Gestão Escolar</h3>
+                    <p>Sistema completo full-stack para gestão acadêmica e administrativa de escolas. Inclui módulos de alunos, professores, turmas, notas, frequência, biblioteca, financeiro e comunicados. Interface responsiva com dashboard interativo e relatórios.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>Bootstrap</span>
+                        <span>Chart.js</span>
+                        <span>SQLite</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://Michel1990.pythonanywhere.com" target="_blank" class="btn primary-btn">Ver Demo</a>
+                        <a href="https://github.com/MichelAlmeida1990/gestao_escolar" target="_blank" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Barbearia do Di">
+                </div>
+                <div class="project-info">
+                    <h3>Barbearia do Di</h3>
+                    <p>Site responsivo para barbearia com sistema de agendamento e galeria de serviços.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://barbearia-do-di.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
+                        <a href="https://github.com/MichelAlmeida1990/barbearia-do-di" target="_blank" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Site de Bebidas do Santo">
+                </div>
+                <div class="project-info">
+                    <h3>Santo Drink</h3>
+                    <p>E-commerce de bebidas com catálogo de produtos e sistema de carrinho de compras.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://michelalmeida1990.github.io/SITE-DE-BEBIDAS-DO-SANTO/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                        <a href="https://github.com/MichelAlmeida1990/SITE-DE-BEBIDAS-DO-SANTO" target="_blank" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Portfólio Pessoal">
+                </div>
+                <div class="project-info">
+                    <h3>Portfólio Pessoal</h3>
+                    <p>Site responsivo para apresentação de projetos e habilidades técnicas.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn primary-btn">Ver Demo</a>
+                        <a href="https://github.com/MichelAlmeida1990" target="_blank" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -476,7 +443,7 @@
                     <div class="education-info">
                         <h3>Bacharelado em Tecnologia da Informação</h3>
                         <h4>Universidade Virtual do Estado de São Paulo (UNIVESP)</h4>
-                        <p class="education-date">Concluído em Maio 2025</p>
+                        <p class="education-date">Em andamento</p>
                         <p>Formação com foco em desenvolvimento de software, infraestrutura e sistemas de informação.</p>
                     </div>
                 </div>
@@ -514,114 +481,49 @@
         </div>
     </section>
 
-   <!-- Contato com design moderno -->
+   <!-- Contato com formulário animado -->
 <section id="contato" class="contato">
     <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
     <div class="contato-container">
-        <!-- Informações de Contato -->
         <div class="contato-info" data-aos="fade-right" data-aos-delay="100">
             <div class="card-particles-container"></div>
             <div class="card-content">
-                <h3>Vamos Conversar!</h3>
-                <p class="contato-subtitle">Estou sempre aberto a novas oportunidades e colaborações interessantes.</p>
-                
-                <div class="contact-items">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>michelpaulo06@hotmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Telefone</h4>
-                            <p>(11) 95940-7653</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Localização</h4>
-                            <p>Mauá - São Paulo</p>
-                        </div>
-                    </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>michelpaulo06@hotmail.com</p>
                 </div>
-                
-                <div class="social-section">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/michel-paulo-de-almeida/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/MichelAlmeida1990" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.instagram.com/michel.almeida1990" target="_blank" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                    </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>(11) 95940-7653</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Mauá - SP</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/michel-paulo-de-almeida/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/MichelAlmeida1990" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/michel.almeida1990" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
-        
-        <!-- Formulário de Contato -->
         <div class="contato-form" data-aos="fade-left" data-aos-delay="100">
             <div class="card-particles-container"></div>
             <div class="card-content">
-                <h3>Envie uma Mensagem</h3>
-                <p class="form-subtitle">Preencha o formulário abaixo e entrarei em contato em breve.</p>
-                
-                <form id="contact-form" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" required>
-                            <label for="name">
-                                <i class="fas fa-user"></i>
-                                Nome Completo
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email">
-                                <i class="fas fa-envelope"></i>
-                                Email
-                            </label>
-                        </div>
-                    </div>
-                    
+                <form id="contact-form">
                     <div class="form-group">
-                        <input type="text" id="subject" name="subject" required>
-                        <label for="subject">
-                            <i class="fas fa-tag"></i>
-                            Assunto
-                        </label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Nome</label>
                     </div>
-                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
                     <div class="form-group">
                         <textarea id="message" name="message" required></textarea>
-                        <label for="message">
-                            <i class="fas fa-comment"></i>
-                            Sua Mensagem
-                        </label>
+                        <label for="message">Mensagem</label>
                     </div>
-                    
-                    <button type="submit" class="btn primary-btn submit-btn">
-                        <i class="fas fa-paper-plane"></i>
-                        Enviar Mensagem
-                    </button>
+                    <button type="submit" class="btn primary-btn">Enviar Mensagem</button>
                 </form>
             </div>
         </div>
@@ -638,14 +540,11 @@
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script src="js/particles/particles-config.js"></script>
 <script src="js/cursor.js"></script>
 <script src="js/menu-particles.js"></script>
 <script src="js/card-particles.js"></script>
 <script src="js/theme-toggle.js"></script>
-<script src="js/contact-form.js"></script>
-<script src="js/slider.js"></script>
 <script src="scripts.js"></script>
 <div class="menu-backdrop" id="menuBackdrop"></div>
 </body>

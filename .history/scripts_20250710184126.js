@@ -186,5 +186,91 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Carrossel de Projetos
+    function initProjectsCarousel() {
+        const track = document.querySelector('.carousel-track');
+        const cards = document.querySelectorAll('.carousel-track .project-card');
+        const prevBtn = document.querySelector('.carousel-arrows .prev-arrow');
+        const nextBtn = document.querySelector('.carousel-arrows .next-arrow');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
+        
+        if (!track || !cards.length) return;
+        
+        let currentIndex = 0;
+        const cardWidth = 380; // Largura do card + gap
+        const maxIndex = cards.length - 1;
+        
+        function updateCarousel() {
+            const translateX = -currentIndex * cardWidth;
+            track.style.transform = `translateX(${translateX}px)`;
+            
+            // Atualizar botões
+            if (prevBtn && nextBtn) {
+                prevBtn.classList.toggle('disabled', currentIndex === 0);
+                nextBtn.classList.toggle('disabled', currentIndex === maxIndex);
+            }
+            
+            // Atualizar dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+        
+        function goToSlide(index) {
+            currentIndex = Math.max(0, Math.min(index, maxIndex));
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            if (currentIndex < maxIndex) {
+                goToSlide(currentIndex + 1);
+            }
+        }
+        
+        function prevSlide() {
+            if (currentIndex > 0) {
+                goToSlide(currentIndex - 1);
+            }
+        }
+        
+        // Event listeners
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+        
+        // Auto-play (opcional)
+        let autoPlayInterval;
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                if (currentIndex === maxIndex) {
+                    goToSlide(0);
+                } else {
+                    nextSlide();
+                }
+            }, 5000);
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+        
+        // Pausar auto-play quando hover
+        if (track) {
+            track.addEventListener('mouseenter', stopAutoPlay);
+            track.addEventListener('mouseleave', startAutoPlay);
+        }
+        
+        // Iniciar auto-play
+        startAutoPlay();
+        
+        // Inicializar
+        updateCarousel();
+    }
 
+    // Inicializar carrossel de projetos
+    initProjectsCarousel();
 });
