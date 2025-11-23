@@ -70,6 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
             window.updateParticlesColors(currentTheme !== 'dark');
         }
         
+        // Disparar evento de mudança de tema para reinicializar animações
+        const themeChangedEvent = new CustomEvent('themeChanged', {
+            detail: { theme: currentTheme === 'dark' ? 'light' : 'dark' }
+        });
+        document.dispatchEvent(themeChangedEvent);
+        
         // Remover classe de transição após a animação
         setTimeout(() => {
             document.body.classList.remove('theme-transition');
@@ -90,10 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 lineColor: '#FFD700' // Dourado
             };
             
-            // Cores para modo claro (azul)
+            // Cores para modo claro (verde escuro neon)
             const lightThemeColors = {
-                color: '#4A8FFF', // Azul
-                lineColor: '#4A8FFF' // Azul
+                color: '#00D96F', // Verde escuro neon
+                lineColor: '#00D96F' // Verde escuro neon
             };
             
             // Aplicar configurações baseadas no tema
@@ -131,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Atualizando partículas do menu");
             
             const darkColor = 'rgba(255, 215, 0, 0.7)'; // Dourado com transparência
-            const lightColor = 'rgba(120, 180, 255, 0.7)'; // Azul com transparência
+            const lightColor = 'rgba(0, 217, 111, 0.7)'; // Verde escuro neon com transparência
             
             try {
                 // Atualizar cor de cada partícula

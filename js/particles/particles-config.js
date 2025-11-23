@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const isLowPerfDevice = isMobile || window.navigator.hardwareConcurrency <= 4;
     
-    // Configurar densidade de partículas com base no dispositivo
-    const particleCount = isLowPerfDevice ? 50 : 100;
-    const particleSpeed = isLowPerfDevice ? 3 : 6;
+    // Configurar densidade de partículas com base no dispositivo (aumentado para tema claro)
+    const particleCount = isLowPerfDevice ? 80 : 150;
+    const particleSpeed = isLowPerfDevice ? 4 : 8;
     
     // Verificar se o elemento particles-js existe
     if (document.getElementById('particles-js')) {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 },
                 "color": {
-                    "value": ["#2563EB", "#10B981", "#8B5CF6", "#ffffff"]
+                    "value": ["#00D96F", "#10B981", "#8B5CF6", "#ffffff"]
                 },
                 "shape": {
                     "type": "circle",
@@ -38,31 +38,31 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 },
                 "opacity": {
-                    "value": 0.6,
+                    "value": 0.9,
                     "random": true,
                     "anim": {
                         "enable": true,
                         "speed": 1,
-                        "opacity_min": 0.1,
+                        "opacity_min": 0.3,
                         "sync": false
                     }
                 },
                 "size": {
-                    "value": 3,
+                    "value": 4,
                     "random": true,
                     "anim": {
                         "enable": true,
                         "speed": 2,
-                        "size_min": 0.3,
+                        "size_min": 0.5,
                         "sync": false
                     }
                 },
                 "line_linked": {
                     "enable": true,
-                    "distance": 150,
-                    "color": "#2563EB",
-                    "opacity": 0.4,
-                    "width": 1
+                    "distance": 180,
+                    "color": "#00D96F",
+                    "opacity": 0.7,
+                    "width": 1.5
                 },
                 "move": {
                     "enable": true,

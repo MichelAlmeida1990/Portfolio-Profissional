@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Efeito de digitação para o texto animado
-    const textArray = ["Desenvolvedor Front-End", "Estudante de TI", "Entusiasta de Cloud Computing", "Apaixonado por Tecnologia"];
+    const textArray = ["Desenvolvedor Full-Stack", "Formado em TI", "Especialista em Cloud Computing", "53+ Projetos no GitHub"];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;

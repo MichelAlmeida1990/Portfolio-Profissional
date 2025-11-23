@@ -74,17 +74,17 @@ document.addEventListener('DOMContentLoaded', function() {
       this.speedX = Math.random() * speedFactor - (speedFactor/2);
       this.speedY = Math.random() * speedFactor - (speedFactor/2);
       
-      // Cor adaptada ao tema atual
+      // Cor adaptada ao tema atual (aumentado para tema claro)
       const opacity = isMobile ? 
-        Math.random() * 0.5 + 0.2 :  // Menos opaco em mobile para não interferir no conteúdo
-        Math.random() * 0.7 + 0.3;
+        Math.random() * 0.6 + 0.3 :  // Mais opaco em mobile
+        Math.random() * 0.8 + 0.5;  // Muito mais opaco em desktop
       
       // Verificar tema atual
       const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
       
       this.color = isDarkTheme 
         ? `rgba(255, 215, 0, ${opacity})` // Dourado para tema escuro
-        : `rgba(120, 180, 255, ${opacity})`; // Azul para tema claro
+        : `rgba(0, 217, 111, ${opacity})`; // Verde escuro neon para tema claro
     }
     
     update() {
@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function createParticles() {
     particlesArray = [];
     
-    // Densidade adaptada para diferentes dispositivos
-    const particleCount = isMobile ? 30 : 50;
+    // Densidade adaptada para diferentes dispositivos (aumentado)
+    const particleCount = isMobile ? 50 : 80;
     
     for (let i = 0; i < particleCount; i++) {
       particlesArray.push(new Particle());
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Verificar tema atual para cor das linhas
     const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
-    const lineColorBase = isDarkTheme ? 'rgba(255, 215, 0,' : 'rgba(100, 160, 255,';
+    const lineColorBase = isDarkTheme ? 'rgba(255, 215, 0,' : 'rgba(0, 217, 111,';
     
     for (let a = 0; a < particlesArray.length; a++) {
       // Em mobile, conectar menos partículas para melhor desempenho
@@ -154,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (distance < maxDistance) {
           const opacity = 1 - (distance / maxDistance);
-          // Menor opacidade em mobile para maior legibilidade do conteúdo
-          ctx.strokeStyle = `${lineColorBase} ${opacity * (isMobile ? 0.4 : 0.7)})`;
+          // Aumentado para tema claro mais forte
+          ctx.strokeStyle = `${lineColorBase} ${opacity * (isMobile ? 0.6 : 0.9)})`;
           ctx.lineWidth = lineWidth;
           ctx.beginPath();
           ctx.moveTo(particlesArray[a].x, particlesArray[a].y);

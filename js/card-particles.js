@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
         return {
             "particles": {
                 "number": {
-                    // Reduzir número de partículas em dispositivos menores
-                    "value": isMobile ? 40 : (isTablet ? 60 : 80),
+                    // Aumentado para tema claro mais forte
+                    "value": isMobile ? 60 : (isTablet ? 90 : 120),
                     "density": {
                         "enable": true,
                         "value_area": isMobile ? 600 : 800
                     }
                 },
                 "color": {
-                    "value": "#4A8FFF"  // Cor padrão para o tema claro (azul)
+                    "value": "#00D96F"  // Cor padrão para o tema claro (verde escuro neon)
                 },
                 "shape": {
                     "type": "circle",
@@ -30,31 +30,31 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 },
                 "opacity": {
-                    "value": 0.6,
+                    "value": 0.85,
                     "random": true,
                     "anim": {
                         "enable": true,
                         "speed": isMobile ? 0.6 : 0.8,
-                        "opacity_min": 0.1,
+                        "opacity_min": 0.3,
                         "sync": false
                     }
                 },
                 "size": {
-                    "value": isMobile ? 2 : 3,
+                    "value": isMobile ? 3 : 4,
                     "random": true,
                     "anim": {
                         "enable": true,
                         "speed": isMobile ? 1.5 : 2,
-                        "size_min": 0.1,
+                        "size_min": 0.3,
                         "sync": false
                     }
                 },
                 "line_linked": {
                     "enable": true,
-                    "distance": isMobile ? 120 : 150,
-                    "color": "#4A8FFF",
-                    "opacity": 0.4,
-                    "width": isMobile ? 0.8 : 1
+                    "distance": isMobile ? 140 : 180,
+                    "color": "#00D96F",
+                    "opacity": 0.7,
+                    "width": isMobile ? 1 : 1.5
                 },
                 "move": {
                     "enable": true,
@@ -117,8 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cores para os diferentes temas
     const colors = {
         light: {
-            particles: "#4A8FFF",  // Azul
-            lines: "#4A8FFF"
+            particles: "#00D96F",  // Verde escuro neon
+            lines: "#00D96F"
         },
         dark: {
             particles: "#FFD700",  // Dourado

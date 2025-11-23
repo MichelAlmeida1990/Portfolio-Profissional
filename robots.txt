@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://michelalmeida1990.github.io/Portfolio-Profissional/sitemap.xml
+
+
+

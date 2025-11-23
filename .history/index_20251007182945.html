@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michel Paulo | Desenvolvedor Front-End</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/menu-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <!-- Navbar com menu lateral -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <i class="fas fa-laptop-code"></i>
+                <span>Michel Paulo</span>
+            </a>
+        </div>
+        
+        <div class="menu-hamburger" id="menuToggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <div class="menu-overlay" id="menuOverlay">
+            <!-- Canvas para partículas -->
+            <canvas id="particleCanvas"></canvas>
+            
+            <!-- Botão de fechar -->
+            <button class="menu-close"><i class="fas fa-times"></i></button>
+            
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-item">Início</a></li>
+                    <li><a href="#sobre" class="nav-item">Sobre</a></li>
+                    <li><a href="#tecnologias" class="nav-item">Tecnologias</a></li>
+                    <li><a href="#certificados" class="nav-item">Certificados</a></li>
+                    <li><a href="#projetos" class="nav-item">Projetos</a></li>
+                    <li><a href="#formacao" class="nav-item">Formação</a></li>
+                    <li><a href="#contato" class="nav-item">Contato</a></li>
+                </ul>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/michel-paulo-de-almeida/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/MichelAlmeida1990" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/michel.almeida1990" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Botão de alternância de tema -->
+    <button class="theme-toggle" id="theme-toggle" title="Mudar para modo escuro">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <!-- Hero Section com animação de digitação e partículas -->
+    <section id="home" class="hero">
+        <!-- Canvas para partículas interativas -->
+        <div id="particles-js" class="particles-container"></div>
+        
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+            <h1>Michel Paulo de Almeida</h1>
+            <div class="typing-text">
+                <span id="text-animation"></span><span class="cursor">|</span>
+            </div>
+            <p>Desenvolvedor Front-End e entusiasta de Cloud Computing</p>
+            <div class="hero-buttons">
+                <a href="#projetos" class="btn primary-btn">Ver Projetos</a>
+                <a href="#contato" class="btn secondary-btn">Contato</a>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+            <div class="profile-placeholder">
+                <img src="./image/foto perfil.png" alt="Foto perfil" id="profile-img" onerror="this.src='https://via.placeholder.com/300x300'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre mim com foco em tecnologia -->
+    <section id="sobre" class="sobre">
+        <h2 class="section-title" data-aos="fade-up">Sobre Mim</h2>
+        <div class="sobre-content">
+            <div class="sobre-text" data-aos="fade-up" data-aos-delay="100">
+                <p>Desenvolvedor Full-Stack com formação em Tecnologia da Informação e experiência em criar aplicações web modernas e robustas. Domino tecnologias front-end como React, Material-UI, Bootstrap e back-end com Python/Django e Firebase.</p>
+                <p>Especializado em desenvolvimento de sistemas completos, desde aplicações React com autenticação Firebase até sistemas Django com múltiplos módulos. Meu background em gestão me proporciona uma visão única sobre a importância da experiência do usuário e da eficiência operacional.</p>
+            </div>
+            <div class="cards-container">
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-particles-container"></div>
+                    <div class="card-content">
+                        <i class="fas fa-code"></i>
+                        <h3>Desenvolvimento</h3>
+                        <p>Full-Stack, React, Django, Firebase e desenvolvimento web moderno</p>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-particles-container"></div>
+                    <div class="card-content">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud Computing</h3>
+                        <p>Microsoft Azure, AWS e fundamentos de infraestrutura em nuvem</p>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-particles-container"></div>
+                    <div class="card-content">
+                        <i class="fas fa-database"></i>
+                        <h3>Dados</h3>
+                        <p>SQLite, PostgreSQL, Firestore, Chart.js e análise de dados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologias com ícones -->
+    <section id="tecnologias" class="tecnologias">
+        <h2 class="section-title" data-aos="fade-up">Tecnologias</h2>
+        <div class="tech-container">
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-particles-container"></div>
+                <div class="card-content">
+                    <h3>Front-End</h3>
+                    <div class="tech-icons">
+                        <div class="tech-icon">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-particles-container"></div>
+                <div class="card-content">
+                    <h3>Back-End & Dados</h3>
+                    <div class="tech-icons">
+                        <div class="tech-icon">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Power BI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-particles-container"></div>
+                <div class="card-content">
+                    <h3>DevOps & Cloud</h3>
+                    <div class="tech-icons">
+                        <div class="tech-icon">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-microsoft"></i>
+                            <span>Azure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-group" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-particles-container"></div>
+                <div class="card-content">
+                    <h3>Ferramentas</h3>
+                    <div class="tech-icons">
+                        <div class="tech-icon">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-terminal"></i>
+                            <span>Terminal</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-tasks"></i>
+                            <span>Scrum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificados com cards deslizantes (alterado de Certificações) -->
+    <section id="certificados" class="certificados">
+        <h2 class="section-title" data-aos="fade-up">Certificados</h2>
+        <div class="certificados-slider" data-aos="fade-up" data-aos-delay="100">
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="certificado-card">
+                        <div class="card-particles-container"></div>
+                        <div class="card-content">
+                            <div class="certificado-logo">
+                                <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft">
+                            </div>
+                            <div class="certificado-info">
+                                <h3>Microsoft Azure Fundamentals (AZ-900)</h3>
+                                <p>Microsoft</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="card-particles-container"></div>
+                        <div class="card-content">
+                            <div class="certificado-logo">
+                                <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft">
+                            </div>
+                            <div class="certificado-info">
+                                <h3>Microsoft AI-900</h3>
+                                <p>SENAI</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="card-particles-container"></div>
+                        <div class="card-content">
+                            <div class="certificado-logo">
+                                <img src="https://cdn.iconscout.com/icon/free/png-256/free-aws-1869025-1583149.png" alt="AWS">
+                            </div>
+                            <div class="certificado-info">
+                                <h3>AWS Cloud Practitioner Essentials</h3>
+                                <p>Ka Solution</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="card-particles-container"></div>
+                        <div class="card-content">
+                            <div class="certificado-logo">
+                                <img src="https://cdn-icons-png.flaticon.com/512/5969/5969293.png" alt="Oracle">
+                            </div>
+                            <div class="certificado-info">
+                                <h3>Oracle Next Education Front-End</h3>
+                                <p>Oracle</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="card-particles-container"></div>
+                        <div class="card-content">
+                            <div class="certificado-logo">
+                                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" alt="Java">
+                            </div>
+                            <div class="certificado-info">
+                                <h3>Linguagem de Programação Java</h3>
+                                <p>Fundação Bradesco</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certificado-card">
+                        <div class="card-particles-container"></div>
+                        <div class="card-content">
+                            <div class="certificado-logo">
+                                <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft">
+                            </div>
+                            <div class="certificado-info">
+                                <h3>Microsoft 365 Fundamentals (MS-900)</h3>
+                                <p>Microsoft</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-arrows">
+                    <button class="arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos com Carrossel 3D (Desktop) -->
+    <section id="projetos" class="projetos">
+        <h2 class="section-title" data-aos="fade-up">Meus Projetos</h2>
+        
+        <!-- Carrossel Desktop (3D) -->
+        <div class="projects-slider-container desktop-carousel">
+            <ul class='slider'>
+                <!-- App de Academia -->
+                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                    <div class='content'>
+                        <h2 class='title'>App de Academia</h2>
+                        <p class='description'>Aplicação React completa e profissional para gestão de academias. Sistema robusto com autenticação Firebase, dashboard interativo, gerenciamento de perfis, catálogo de exercícios, estatísticas avançadas com gráficos e interface moderna com Material-UI.</p>
+                        <div class="project-tags">
+                            <span>React 18</span>
+                            <span>Firebase</span>
+                            <span>Material-UI</span>
+                            <span>Chart.js</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://michelalmeida1990.github.io/App-de-academia/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                            <a href="https://github.com/MichelAlmeida1990/App-de-academia" target="_blank" class="btn">Código</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Sistema de Gestão Escolar -->
+                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                    <div class='content'>
+                        <h2 class='title'>Sistema de Gestão Escolar</h2>
+                        <p class='description'>Sistema completo full-stack para gestão acadêmica e administrativa de escolas. Inclui módulos de alunos, professores, turmas, notas, frequência, biblioteca, financeiro e comunicados.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>PostgreSQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://Michel1990.pythonanywhere.com" target="_blank" class="btn primary-btn">Ver Demo</a>
+                            <a href="https://github.com/MichelAlmeida1990/gestao_escolar" target="_blank" class="btn">Código</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Barbearia do Di -->
+                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                    <div class='content'>
+                        <h2 class='title'>Barbearia do Di</h2>
+                        <p class='description'>Site responsivo para barbearia com sistema de agendamento e galeria de serviços. Design moderno e funcional para estabelecimentos de beleza.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://barbearia-do-di.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
+                            <a href="https://github.com/MichelAlmeida1990/barbearia-do-di" target="_blank" class="btn">Código</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Santo Drink -->
+                <li class='item' style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                    <div class='content'>
+                        <h2 class='title'>Santo Drink</h2>
+                        <p class='description'>E-commerce de bebidas com catálogo de produtos e sistema de carrinho de compras. Interface intuitiva para vendas online de bebidas.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>E-commerce</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://michelalmeida1990.github.io/SITE-DE-BEBIDAS-DO-SANTO/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                            <a href="https://github.com/MichelAlmeida1990/SITE-DE-BEBIDAS-DO-SANTO" target="_blank" class="btn">Código</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Psicóloga Lígia Silva -->
+                <li class='item' style="background-image: url('./image/Psicologa.png')">
+                    <div class='content'>
+                        <h2 class='title'>Site Psicóloga Lígia Silva</h2>
+                        <p class='description'>Site profissional para psicóloga clínica especializada em Terapia Cognitivo-Comportamental (TCC). Inclui informações sobre áreas de atendimento, tratamento, FAQ e formulário de contato.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Google Meet</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://michelalmeida1990.github.io/Projeto-Psicologa/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                            <a href="https://github.com/MichelAlmeida1990/Projeto-Psicologa" target="_blank" class="btn">Código</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Imobiliária -->
+                <li class='item' style="background-image: url('./image/imobiliaria.png')">
+                    <div class='content'>
+                        <h2 class='title'>Site Imobiliária</h2>
+                        <p class='description'>Site profissional para imobiliária com catálogo de imóveis, sistema de busca, filtros avançados e formulário de contato para clientes interessados.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Filtros</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://projeto-imobiliaria-five.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
+                            <a href="https://github.com/MichelAlmeida1990/projeto-imobiliaria" target="_blank" class="btn">Código</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Fotógrafa Cristiane Justino -->
+                <li class='item' style="background-image: url('./image/fotografo.png')">
+                    <div class='content'>
+                        <h2 class='title'>Site Fotógrafa Cristiane Justino</h2>
+                        <p class='description'>Site profissional para fotógrafa com portfólio, sistema de agendamento online, galeria de trabalhos e formulário de contato. Design elegante e responsivo.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Agendamento</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://michelalmeida1990.github.io/Projeto-Fotografo/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                            <a href="https://github.com/MichelAlmeida1990/Projeto-Fotografo" target="_blank" class="btn">Código</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
+            <nav class='nav'>
+                <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+                <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+            </nav>
+        </div>
+
+        <!-- Carrossel Mobile (Cards Simples) -->
+        <div class="mobile-carousel">
+            <div class="mobile-slider-container">
+                <div class="mobile-slider-track">
+                    <!-- App de Academia -->
+                    <div class="mobile-project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="App de Academia">
+                        </div>
+                        <div class="project-content">
+                            <h3>App de Academia</h3>
+                            <p>Aplicação React completa e profissional para gestão de academias. Sistema robusto com autenticação Firebase, dashboard interativo, gerenciamento de perfis, catálogo de exercícios, estatísticas avançadas com gráficos e interface moderna com Material-UI.</p>
+                            <div class="project-tags">
+                                <span>React 18</span>
+                                <span>Firebase</span>
+                                <span>Material-UI</span>
+                                <span>Chart.js</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="https://michelalmeida1990.github.io/App-de-academia/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                <a href="https://github.com/MichelAlmeida1990/App-de-academia" target="_blank" class="btn">Código</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sistema de Gestão Escolar -->
+                    <div class="mobile-project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Sistema de Gestão Escolar">
+                        </div>
+                        <div class="project-content">
+                            <h3>Sistema de Gestão Escolar</h3>
+                            <p>Sistema completo full-stack para gestão acadêmica e administrativa de escolas. Inclui módulos de alunos, professores, turmas, notas, frequência, biblioteca, financeiro e comunicados.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Django</span>
+                                <span>PostgreSQL</span>
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="https://Michel1990.pythonanywhere.com" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                <a href="https://github.com/MichelAlmeida1990/gestao_escolar" target="_blank" class="btn">Código</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Barbearia do Di -->
+                    <div class="mobile-project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Barbearia do Di">
+                        </div>
+                        <div class="project-content">
+                            <h3>Barbearia do Di</h3>
+                            <p>Site responsivo para barbearia com sistema de agendamento e galeria de serviços. Design moderno e funcional para estabelecimentos de beleza.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Responsive</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="https://barbearia-do-di.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                <a href="https://github.com/MichelAlmeida1990/barbearia-do-di" target="_blank" class="btn">Código</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Santo Drink -->
+                    <div class="mobile-project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Santo Drink">
+                        </div>
+                        <div class="project-content">
+                            <h3>Santo Drink</h3>
+                            <p>E-commerce de bebidas com catálogo de produtos e sistema de carrinho de compras. Interface intuitiva para vendas online de bebidas.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>E-commerce</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="https://michelalmeida1990.github.io/SITE-DE-BEBIDAS-DO-SANTO/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                <a href="https://github.com/MichelAlmeida1990/SITE-DE-BEBIDAS-DO-SANTO" target="_blank" class="btn">Código</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Psicóloga Lígia Silva -->
+                    <div class="mobile-project-card">
+                        <div class="project-image">
+                            <img src="./image/Psicologa.png" alt="Site Psicóloga Lígia Silva">
+                        </div>
+                        <div class="project-content">
+                            <h3>Site Psicóloga Lígia Silva</h3>
+                            <p>Site profissional para psicóloga clínica especializada em Terapia Cognitivo-Comportamental (TCC). Inclui informações sobre áreas de atendimento, tratamento, FAQ e formulário de contato.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Google Meet</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="https://michelalmeida1990.github.io/Projeto-Psicologa/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                <a href="https://github.com/MichelAlmeida1990/Projeto-Psicologa" target="_blank" class="btn">Código</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imobiliária -->
+                    <div class="mobile-project-card">
+                        <div class="project-image">
+                            <img src="./image/imobiliaria.png" alt="Site Imobiliária">
+                        </div>
+                        <div class="project-content">
+                            <h3>Site Imobiliária</h3>
+                            <p>Site profissional para imobiliária com catálogo de imóveis, sistema de busca, filtros avançados e formulário de contato para clientes interessados.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Filtros</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="https://projeto-imobiliaria-five.vercel.app" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                <a href="https://github.com/MichelAlmeida1990/projeto-imobiliaria" target="_blank" class="btn">Código</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fotógrafa Cristiane Justino -->
+                    <div class="mobile-project-card">
+                        <div class="project-image">
+                            <img src="./image/fotografo.png" alt="Site Fotógrafa Cristiane Justino">
+                        </div>
+                        <div class="project-content">
+                            <h3>Site Fotógrafa Cristiane Justino</h3>
+                            <p>Site profissional para fotógrafa com portfólio, sistema de agendamento online, galeria de trabalhos e formulário de contato. Design elegante e responsivo.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Agendamento</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="https://michelalmeida1990.github.io/Projeto-Fotografo/" target="_blank" class="btn primary-btn">Ver Demo</a>
+                                <a href="https://github.com/MichelAlmeida1990/Projeto-Fotografo" target="_blank" class="btn">Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles do carrossel mobile -->
+                <div class="mobile-slider-controls">
+                    <button class="mobile-prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="mobile-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                        <span class="dot" data-slide="4"></span>
+                        <span class="dot" data-slide="5"></span>
+                        <span class="dot" data-slide="6"></span>
+                    </div>
+                    <button class="mobile-next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formação Acadêmica -->
+    <section id="formacao" class="formacao">
+        <h2 class="section-title" data-aos="fade-up">Formação Acadêmica</h2>
+        <div class="education-container">
+            <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-particles-container"></div>
+                <div class="card-content">
+                    <div class="education-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="education-info">
+                        <h3>Bacharelado em Tecnologia da Informação</h3>
+                        <h4>Universidade Virtual do Estado de São Paulo (UNIVESP)</h4>
+                        <p class="education-date">Concluído em Maio 2025</p>
+                        <p>Formação com foco em desenvolvimento de software, infraestrutura e sistemas de informação.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-particles-container"></div>
+                <div class="card-content">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-info">
+                        <h3>Bacharelado em Gestão de Recursos Humanos</h3>
+                        <h4>Universidade Nove de Julho (UNINOVE)</h4>
+                        <p class="education-date">Concluído em Maio 2022</p>
+                        <p>Formação em gestão de pessoas, processos organizacionais e desenvolvimento profissional.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="education-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-particles-container"></div>
+                <div class="card-content">
+                    <div class="education-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="education-info">
+                        <h3>Programa Oracle Next Education</h3>
+                        <h4>Oracle + Alura</h4>
+                        <p class="education-date">2023</p>
+                        <p>Programa intensivo de formação em desenvolvimento Front-End, com foco em HTML, CSS, JavaScript e React.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Contato com design moderno -->
+<section id="contato" class="contato">
+    <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
+    <div class="contato-container">
+        <!-- Informações de Contato -->
+        <div class="contato-info" data-aos="fade-right" data-aos-delay="100">
+            <div class="card-particles-container"></div>
+            <div class="card-content">
+                <h3>Vamos Conversar!</h3>
+                <p class="contato-subtitle">Estou sempre aberto a novas oportunidades e colaborações interessantes.</p>
+                
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>michelpaulo06@hotmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefone</h4>
+                            <p>(11) 95940-7653</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Localização</h4>
+                            <p>Mauá - São Paulo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/michel-paulo-de-almeida/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/MichelAlmeida1990" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.instagram.com/michel.almeida1990" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Formulário de Contato -->
+        <div class="contato-form" data-aos="fade-left" data-aos-delay="100">
+            <div class="card-particles-container"></div>
+            <div class="card-content">
+                <h3>Envie uma Mensagem</h3>
+                <p class="form-subtitle">Preencha o formulário abaixo e entrarei em contato em breve.</p>
+                
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Nome Completo
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">
+                            <i class="fas fa-tag"></i>
+                            Assunto
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">
+                            <i class="fas fa-comment"></i>
+                            Sua Mensagem
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn primary-btn submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Michel Paulo de Almeida. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js/particles/particles-config.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/menu-particles.js"></script>
+<script src="js/card-particles.js"></script>
+<script src="js/theme-toggle.js"></script>
+<script src="js/contact-form.js"></script>
+<script src="js/slider.js"></script>
+<script src="scripts.js"></script>
+<div class="menu-backdrop" id="menuBackdrop"></div>
+</body>
+</html>
+
